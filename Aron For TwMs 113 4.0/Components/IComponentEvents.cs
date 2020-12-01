@@ -10,6 +10,7 @@ namespace Aron_For_TwMs_113_4.Components
     public interface IComponentEvents
     {
         CtDataCollection GetCt();
+        GameInfo GetGameInfo();
         void SetStatusText(string text);
     }
 }

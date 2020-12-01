@@ -140,46 +140,54 @@ namespace Aron_For_TwMs_113_4.Components
 
         private void t_Lock_Tick(object sender, EventArgs e)
         {
-            if (!MapleProcess.IsOpen)
+            try
             {
-                Process[] ps = Process.GetProcesses();
-                var p = ps.Where(x => x.ProcessName.Contains(textBox1.Text)).FirstOrDefault();
-                if(p == null)
+                if (!MapleProcess.IsOpen)
                 {
-                    _componentEvents.SetStatusText("未鎖定");
-                    return;
-                }
-
-                if (MapleProcess.LoadFromPid(p.Id))
-                {
-                    _componentEvents.SetStatusText($"已鎖定 {MapleProcess.Pid}");
-                    StringBuilder ClassName = new StringBuilder(256);
-                    GetClassName(MapleProcess.MsProc.MainWindowHandle, ClassName, ClassName.Capacity);
-                    if (ClassName.ToString() == "StartUpDlgClass")
+                    Process[] ps = Process.GetProcesses();
+                    var p = ps.Where(x => x.ProcessName.Contains(textBox1.Text)).FirstOrDefault();
+                    if (p == null)
                     {
-                        //自動注入bypass
-                        if (CkBypass.Enabled)
+                        _componentEvents.SetStatusText("未鎖定");
+                        return;
+                    }
+
+                    if (MapleProcess.LoadFromPid(p.Id))
+                    {
+                        _componentEvents.SetStatusText($"已鎖定 {MapleProcess.Pid}");
+                        StringBuilder ClassName = new StringBuilder(256);
+                        GetClassName(MapleProcess.MsProc.MainWindowHandle, ClassName, ClassName.Capacity);
+                        if (ClassName.ToString() == "StartUpDlgClass")
                         {
-                            _componentEvents.GetCt()["bypass"].CeAutoAsm(true);
-                        }
-                        if (CkStart.Checked)
-                        {
-                            Task.Factory.StartNew(() => 
+                            //自動注入bypass
+                            if (CkBypass.Enabled)
                             {
-                                Thread.Sleep(1000);
-                                MapleProcess.MsProc.CloseMainWindow();
-                            });
-                            
+                                _componentEvents.GetCt()["bypass"].CeAutoAsm(true);
+                            }
+                            if (CkStart.Checked)
+                            {
+                                Task.Factory.StartNew(() =>
+                                {
+                                    Thread.Sleep(1000);
+                                    MapleProcess.MsProc.CloseMainWindow();
+                                });
+
+                            }
                         }
                     }
-                }
 
+
+                }
+                else
+                {
+
+                }
+            }
+            catch(Exception ex)
+            {
                 
             }
-            else
-            {
-
-            }
+            
             
 
         }

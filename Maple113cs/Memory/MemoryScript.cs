@@ -153,14 +153,23 @@ namespace ProcessTools.Memory
         public bool DoScript(MemoryControl control, IntPtr ptr, out object output)
         {
             output = DefaultObj;
-            var addr = control.ReadPtrs(ptr, out bool b, PtrOffsets);
-            if (!b) return false;
-            if (!IsRead)
+            if (control == null) return false;
+            try
             {
-                //write
-                if(!WriteObj(control, addr)) return false;
+                var addr = control.ReadPtrs(ptr, out bool b, PtrOffsets);
+                if (!b) return false;
+                if (!IsRead)
+                {
+                    //write
+                    if (!WriteObj(control, addr)) return false;
+                }
+                return ReadObj(control, addr, out output);
             }
-            return ReadObj(control, addr, out output);
+            catch
+            {
+                return false;
+            }
+            
         }
         public static bool DoScripts(ScriptObject[] scripts, MemoryControl control, IntPtr ptr, out object output)
         {
@@ -200,16 +209,16 @@ namespace ProcessTools.Memory
                         def = IntPtr.Zero;
                         break;
                     case ScriptType.Byte:
-                        def = byte.MinValue;
+                        def = (byte)0;
                         break;
                     case ScriptType.Int16:
-                        def = Int16.MinValue;
+                        def = (short)0;
                         break;
                     case ScriptType.Int32:
-                        def = Int32.MinValue;
+                        def = 0;
                         break;
                     case ScriptType.Int64:
-                        def = Int64.MinValue;
+                        def = (long)0;
                         break;
                     case ScriptType.ByteArray:
                         def = new byte[0];
@@ -218,10 +227,10 @@ namespace ProcessTools.Memory
                         def = string.Empty;
                         break;
                     case ScriptType.Float:
-                        def = float.MaxValue;
+                        def = 0f;
                         break;
                     case ScriptType.Double:
-                        def = double.MaxValue;
+                        def = 0.0;
                         break;
                     default:
                         def = null;

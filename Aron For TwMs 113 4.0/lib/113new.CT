@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="19">
+<CheatTable CheatEngineTableVersion="34">
   <CheatEntries>
     <CheatEntry>
       <ID>0</ID>
       <Description>"bypass"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         Alloc(CRCBypass,512)
         Alloc(FakeDump,8376320)
         Label(HSCRCBypass)
@@ -85,7 +84,8 @@
         mov     edi, edi
         push    ebp
         mov     ebp, esp
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>98</ID>
@@ -93,14 +93,14 @@
       <LastState/>
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         00BF949c:
         DB 5B 82 D7 BE 8D A8 FD 05 1F 7C 21 B6 6A BA FE D4 D3 F5 A7 76 26 90 1A B2
         [Disable]
         00BF949c:
         DB 90 D9 71 77 F5 D9 27 AB CF 3E B9 D6 6F 2A 8E 91 32 60 09 94 01 4B 88 A8
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>99</ID>
@@ -108,14 +108,14 @@
       <LastState/>
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         00BF949c:
         DB 7A B0 53 AD FF 9D 6A B5 02 90 2A 6E 79 D0 B4 A9 B3 2F 4C 9D B6 F8 E4 3D
         [Disable]
         00BF949c:
         DB 9B 6E 6A 37 74 53 BB D9 68 90 29 8E 35 DC 82 BD E1 16 EC AD 42 90 25 6E
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>7</ID>
@@ -123,14 +123,14 @@
       <LastState/>
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         00BF901C:
         DB 2C 0B 78 BB 58 C0 DB 25 31 70 EA 2D 5F 4B F0 88 8B 82 45 A4 65 70 D8 35 E3 BE 7F 2D 88 81 6C 01 FF 13 2B 76 C6 BA 24 AD D5 25 69 15 2B 70 25 6E 40 F1 72 15 8A 97 AB A0 94 8F 2A 0E BB B7 24 7A 6C 25 D3 83 A9 6F D7 39 DB AA DB E6 29 A1 31 C7 FF 53 15 7A
         [Disable]
         00BF901C:
         DB 4C 63 23 22 1A 1B 11 61 B4 8F D5 6D 97 14 DF 0B A4 F8 5E B8 C8 8F EA 8D 84 E5 C8 0A 6F 73 51 30 1B 9C D4 7D 52 AD FE 8D 69 F5 6F B4 53 90 2A AE 1C 0F B3 74 78 98 A5 E3 70 90 16 72 55 8C 3F 06 62 FC 31 A8 44 90 16 6E 20 BC 4C 7A 8E 4D D5 2B EF 57 DC 99
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>55</ID>
@@ -138,15 +138,15 @@
       <LastState/>
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         BF9541:
         DB 90 D9 71 62 99 B4 86 CB A4 35 1C 16 70 16 96 9B CD 56 58 72 B9 C3 BA 5E
         [DISABLE]
         BF9541:
         DB 90 D9 71 77 F5 D9 27 AB CF 3E B9 D6 6F 2A 8E 91 32 60 09 94 01 4B 88 A8
 
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>6</ID>
@@ -154,15 +154,15 @@
       <LastState/>
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         00BF90C4:
         DB 07 10 B2 0F 7F 6F 82 CF 7F 6E 2B 25 52 E2 F1 2A C2 11 57 F1 54 F2 D9 ED
         [Disable]
         00BF90C4:
         DB FA CB 27 B0 5F 3E 81 D5 3E 90 D5 8D DC 78 78 37 C6 C3 BB E1 0C 70 2A 6
 
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>100</ID>
@@ -170,8 +170,7 @@
       <LastState/>
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [enable]
+      <AssemblerScript>[enable]
         00bf8e48:
         db A0 C2 A3 1C 15 1E E5 08 AA 8F 15 76 A0 8B D5 38 5D AC C6 09 3A 70 DA 75 4A E9 65 06 4D 2F 33 10 17 70 19 4E 9F A3 E1 84 1C 0D 27 94 B8 6F 19 26 E5 AF EC 71 7F 65 8F 0B 7E 70 E9 51 CB A5 81 BF 2E 0D FC 7D DC 6F 25 AE C5 21 49 E0 0E 49 02 0F 9C 6F D9 51 E2 3C 0E BB E7 71 D8 15 4E 90 E5 8D 34 AF 59 BA D0 CE D2 25 C9 71 DA ED 54 6E 64 08 73 23 43 30 65 70 D9 FD D0 16 AA 70 B7 50 85 A3 ED 8F D5 91
         00bf8ef0:
@@ -185,7 +184,8 @@
         db 89 9B DA 94 DC D4 A6 74 38 90 1A 96 51 5C AA 22 E2 52 15 89 44 90 D5 6D AB D8 EA 92 C5 56 97 5C 0A 90 D9 8D BA 9C 52 AD E6 39 72 35 4B 35 32 EE 47 97 1D 98 BB EC C0 6C F5 6F D6 BD
         00bf8ecc:
         db 33 56 64 CC B1 22 63 9E E2 6F 19 92 32 4F 85 D5 79 2A AC 96 72 70 25 92 88 BB 41 80 D2 C3 1A 6C 2E 26 F2 95 55 90 67 F8 82 3C C3 97 84 8F D9 59 43 64 4F 73 22 7B 9A 1B C4 8F E9 91 C2 6C 0C 70 66 63 80 13 4C 70 D5 91 DE 12 2B 62 98 96 09 DB AE CD CD 79 69 0A 0F 16 52 78 B0 18 25 90 15 3E 55 EC 6B 62 62 5F 13 AB 44 90 D9 71 68 D0 41 8E 83 0E 72 44 86 6F 19 6E 1C 0D 19 5C 66 06 F8 CA 4E AE 2D 5A 3B 52 62 F6 91 12 B3 FF A2 8F 19 B2 4A A3 BB 59 1A DD CD 52 B4 8F E6 91 1E E8 A3 BF 40 1F FD F5 00 90 25 8E 99 CC 60 6C 6A C8 7B E3 4E 32 32 8A D9 1B E7 B4 DE 38 A7 0D 3C 90 19 AE B2 E2 D2 B1 15 97 8E 95 AA 8F EA 8D B9 AE 97 C0 75 BD 04 CE 6A 90 D6 71 BE 3F BD 5E F3 27 ED DA 70 AE 0D 7A 17 5F 55 37 F8 AA BA 09 70 70 2A DE 8F 50 DB 57 84 DA BE 7A 88 8F 2A 92 83 55 FA 9C AC D2 E7 1C D8 8F 1A 8E 4C F6 C0 84 BC C9 3E 4C EE 31 32 56 23 E7 73 3B 39 9F DB 79 F2 8F EA ED
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>90</ID>
@@ -193,14 +193,14 @@
       <LastState/>
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         00BF9454:
         DB BA D3 5E 0D 9D F6 6A A8 BA 8F 2A 66 07 41 E7 55 05 CD AE 7A 8D 22 29 D2
         [Disable]
         00BF9454:
         DB B2 45 A1 16 2D 0A B5 90 DA 6F 15 8E FC B4 E2 32 A7 15 97 E1 CE 8F D9 6D
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>5</ID>
@@ -208,14 +208,14 @@
       <LastState/>
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         00BF8ECC:
         DB 95 CE 8F 46 77 7E 34 8A 6B 90 15 52 B8 0A 6E B6 73 79 4C 2A 48 99 B2 D2 0A 95 F2 17 37 80 B4 88 5F 7B 1F C6 C6 AC 54 8C 66 A5 62 0C 4C 70 1A 66 91 81 B5 E8 0C AC 45 2F 98 6F D6 11 27 57 E9 D5 9F 43 50 D1 D8 68 CA 24 5B 82 D7 BE 8D A8 FD 05 1F 7C 21 B6 6A BA FE D4 D3 F5 A7 76 26 90 1A B2 0E 19 30 6F CB 80 79 53 13 70 26 72 2D 6F 12 1B 5F 9A 27 87 58 97 35 8C 46 8C 3C 48 FD F0 4A EA DF 7C DF 49 5B 30 53 89 82 99 4A FC 84 8F EA AD D0 80 CB C0 06 5C 06 86 8C 8F D9 71 13 57 18 F4 B8 C2 A0 9F F0 6F 16 92 37 04 BE 88 21 F0 45 BC C2 8F D6 8D 13 88 6D F6 40 6C B3 B7 00 70 19 AA
         [Disable]
         00BF8ECC:
         DB E1 58 37 6A C7 BA 51 0B 0E 90 D6 71 FA 18 6A 00 C7 50 03 D0 0E 90 D9 8D 0A 95 F2 17 37 80 B4 88 5F 7B 1F C6 95 A8 CD 89 44 6D 4E 94 08 70 E9 55 0E 7C 4E 29 E0 73 4A 71 40 90 E9 8D 00 CF D1 39 78 8E CE 01 70 70 EA 6D 5B 82 D7 BE 8D A8 FD 05 1F 7C 21 B6 CB 30 84 DF 86 21 FC 7E 8C 6F 25 B2 AF E1 FA 5F 0D D7 FF 7A 9A 8F 2A 92 1D 22 02 05 10 11 28 E8 A0 8F 25 6E 46 8C 3C 48 FD F0 4A EA DF 7C DF 49 52 78 C5 8D C2 2B 6E B4 04 70 29 AE D0 80 CB C0 06 5C 06 86 8C 8F D9 71 13 57 18 F4 B8 C2 A0 9F F0 6F 16 92 37 04 BE 88 21 F0 45 BC C2 8F D6 8D A2 3C 14 5B E5 A1 D8 3A 4A 70 E6 B9
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>1</ID>
@@ -223,14 +223,14 @@
       <LastState/>
       <Color>000080</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         0097643f:
         jmp 009778bf
         [disable]
         0097643f:
         jne 009778bf
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>11</ID>
@@ -238,15 +238,15 @@
       <LastState/>
       <Color>000080</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         009D78A0:
         je  009D78BC
 
         [DISABLE]
         009D78A0:
         jne 009D78BC
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>92</ID>
@@ -254,8 +254,7 @@
       <LastState/>
       <Color>000080</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        //?芰銝??
+      <AssemblerScript>//?芰銝??
         [enable]
         0069DB1D:
         jmp 0069DB22
@@ -263,7 +262,8 @@
         0069DB1D:
         db E8 A3 7B A8 FF
 
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>3</ID>
@@ -271,8 +271,7 @@
       <LastState/>
       <Color>000080</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [enable]
+      <AssemblerScript>[enable]
         00698F84:
         db 90 90
         00680cb5:
@@ -283,7 +282,8 @@
         db 75 2b 8B D6 E8 5D DF D7 FF
         0069B15C:
         db 74 40 2B 45 EC 79 3B
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>91</ID>
@@ -291,8 +291,7 @@
       <LastState/>
       <Color>000080</Color>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         00977409:
         mov [ebp+0c],0
         mov [ebp+10],0
@@ -306,15 +305,15 @@
         je 0097743A
         mov eax,[ebp-10]
         fild dword ptr [ebp+10]
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>112</ID>
       <Description>"全圖打"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         registersymbol(badegg)
         alloc(badegg,256)
         label(do1)
@@ -342,15 +341,15 @@
         db 56 8B 74 24 0C 57 FF 76 08
         unregistersymbol(badegg)
         dealloc(badegg)
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>113</ID>
       <Description>"全圖吸怪"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         registersymbol(ESIAddy)
         registersymbol(YoYoDupe)
         registersymbol(hookit)
@@ -440,15 +439,15 @@
         dealloc(ESIAddy)
         dealloc(hookit)
         dealloc(onoff)
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>2</ID>
       <Description>"寵物全圖吸"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [enable]
+      <AssemblerScript>[enable]
         registersymbol(PetGetItem)
         alloc(PetGetItem,256)
         registersymbol(PetGetItemSwitch)
@@ -485,15 +484,15 @@
         dealloc(PetGetItem)
         unregistersymbol(PetGetItemSwitch)
         dealloc(PetGetItemSwitch)
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>114</ID>
       <Description>"全圖吸物"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         registersymbol(ItemVac)
         alloc(ItemVac, 1024)
         ItemVac:
@@ -528,15 +527,15 @@
         push eax
         unregistersymbol(ItemVac)
         dealloc(ItemVac)
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>4</ID>
       <Description>"圖鑑全開"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         Alloc(Palerma,256)
         Label(exit)
         Palerma:
@@ -548,15 +547,15 @@
         [Disable]
         0097E9CA:
         db e8 50 F9 DA FF
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>60</ID>
       <Description>"控制走怪"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
 
         alloc(MyLR,1024)
         registersymbol(MyLR)
@@ -822,15 +821,15 @@
         dealloc(MyDir)
         dealloc(MyCt)
         dealloc(MyPt1)
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>63</ID>
       <Description>"改能力"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         Alloc(StatChange,1024)
         Alloc(_str,4)
         Alloc(_dex,4)
@@ -888,58 +887,58 @@
         004F08B4:
         mov edi,[ebp+08]
         mov esi,ecx
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>96</ID>
       <Description>"連撞"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         0097D9F0:
         add eax,00000000
         [disable]
         0097D9F0:
         add eax,000003e8
 
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>97</ID>
       <Description>"不顯傷害"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         0069ACF6:
         db 90 90 90 90 90
         [DISABLE]
         0069ACF6:
         db e8 A1 C1 D7 FF FF 76 50
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>115</ID>
       <Description>"物品定位"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         0050CE3B:
         DB eb 00 8b 4d ec
         [DISABLE]
         0050CE3B:
         DB 75 3e
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>116</ID>
       <Description>"超級撿物"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         00487711:
         db 90 90
         0050EC03:
@@ -949,15 +948,15 @@
         db 75 36
         0050EC03:
         db eb 4e
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>117</ID>
       <Description>"滑鼠SS"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [ENABLE]
+      <AssemblerScript>[ENABLE]
         alloc(SSFlyVac,128)
         label(SSFlyRet)
 
@@ -985,15 +984,15 @@
         00967CBB:
         db 0f 84 92 00 00 00 8B 86
         dealloc(SSFlyVac)
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>118</ID>
       <Description>"滑鼠CS"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [Enable]
+      <AssemblerScript>[Enable]
         registersymbol(cseax)
         alloc(cseax,64)
         alloc(MouserX,512)
@@ -1125,26 +1124,28 @@
         dealloc(mode)
         dealloc(UberX)
         dealloc(UberY)
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>119</ID>
       <Description>"滑鼠CS開關"</Description>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>
-        [enable]
+      <AssemblerScript>[enable]
         mode:
         dd 1
 
         [disable]
         mode:
         dd 0
-      </AssemblerScript>
+      
+</AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>101</ID>
       <Description>"無延遲"</Description>
+      <LastState Value="4294967295" RealAddress="537C2730"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00bf16e8</Address>
       <Offsets>
@@ -1154,6 +1155,7 @@
     <CheatEntry>
       <ID>102</ID>
       <Description>"停止呼吸"</Description>
+      <LastState Value="0" RealAddress="537C2728"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF16E8</Address>
       <Offsets>
@@ -1163,6 +1165,7 @@
     <CheatEntry>
       <ID>103</ID>
       <Description>"攻擊不停"</Description>
+      <LastState Value="0" RealAddress="537C4BD0"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF16E8</Address>
       <Offsets>
@@ -1172,6 +1175,7 @@
     <CheatEntry>
       <ID>104</ID>
       <Description>"紅點數量"</Description>
+      <LastState Value="0" RealAddress="0672DC44"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF16F8</Address>
       <Offsets>
@@ -1181,6 +1185,7 @@
     <CheatEntry>
       <ID>105</ID>
       <Description>"X"</Description>
+      <LastState Value="734" RealAddress="0943F4E8"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF2ECC</Address>
       <Offsets>
@@ -1190,6 +1195,7 @@
     <CheatEntry>
       <ID>106</ID>
       <Description>"Y"</Description>
+      <LastState Value="4294966989" RealAddress="0943F4EC"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF2ECC</Address>
       <Offsets>
@@ -1199,6 +1205,7 @@
     <CheatEntry>
       <ID>107</ID>
       <Description>"system_time"</Description>
+      <LastState Value="2033437" RealAddress="0019EF80"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF1AB0</Address>
       <Offsets>
@@ -1208,6 +1215,7 @@
     <CheatEntry>
       <ID>108</ID>
       <Description>"怪物數量"</Description>
+      <LastState Value="7" RealAddress="075B0A68"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF16F4</Address>
       <Offsets>
@@ -1217,6 +1225,7 @@
     <CheatEntry>
       <ID>109</ID>
       <Description>"滑鼠X"</Description>
+      <LastState Value="834" RealAddress="07761480"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF194C</Address>
       <Offsets>
@@ -1226,6 +1235,7 @@
     <CheatEntry>
       <ID>110</ID>
       <Description>"滑鼠Y"</Description>
+      <LastState Value="792" RealAddress="07761484"/>
       <VariableType>4 Bytes</VariableType>
       <Address>00BF194C</Address>
       <Offsets>
@@ -1235,13 +1245,59 @@
     <CheatEntry>
       <ID>111</ID>
       <Description>"人物名"</Description>
+      <LastState RealAddress="5DD11028"/>
       <VariableType>String</VariableType>
       <Length>15</Length>
       <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
       <ZeroTerminate>1</ZeroTerminate>
       <Address>00BF8e44</Address>
       <Offsets>
         <Offset>4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>120</ID>
+      <Description>"hp_lock"</Description>
+      <LastState Value="20" RealAddress="0654DCFC"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>00bf16ec</Address>
+      <Offsets>
+        <Offset>80</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>121</ID>
+      <Description>"mp_lock"</Description>
+      <LastState Value="20" RealAddress="0654DD00"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>00bf16ec</Address>
+      <Offsets>
+        <Offset>84</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>122</ID>
+      <Description>"hp"</Description>
+      <LastState Value="30000" RealAddress="066F9F4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>00bf1948</Address>
+      <Offsets>
+        <Offset>978</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>123</ID>
+      <Description>"mp"</Description>
+      <LastState Value="25884" RealAddress="066F9F50"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>00bf1948</Address>
+      <Offsets>
+        <Offset>97c</Offset>
       </Offsets>
     </CheatEntry>
   </CheatEntries>
@@ -1258,8 +1314,7 @@
   <DisassemblerComments>
     <DisassemblerComment>
       <Address>"EHSvc.dll"+3434D0</Address>
-      <Comment>
-        //
+      <Comment>//
       </Comment>
     </DisassemblerComment>
   </DisassemblerComments>

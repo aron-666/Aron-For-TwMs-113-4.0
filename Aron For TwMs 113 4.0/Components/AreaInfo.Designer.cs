@@ -101,7 +101,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkReName.Location = new System.Drawing.Point(30, 375);
             this.CkReName.Margin = new System.Windows.Forms.Padding(4);
             this.CkReName.Name = "CkReName";
-            this.CkReName.Size = new System.Drawing.Size(114, 29);
+            this.CkReName.Size = new System.Drawing.Size(92, 24);
             this.CkReName.TabIndex = 126;
             this.CkReName.Text = "人物改名";
             this.CkReName.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LName.Location = new System.Drawing.Point(24, 39);
             this.LName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LName.Name = "LName";
-            this.LName.Size = new System.Drawing.Size(112, 25);
+            this.LName.Size = new System.Drawing.Size(90, 21);
             this.LName.TabIndex = 12;
             this.LName.Text = "人物名稱：";
             // 
@@ -126,7 +126,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LAS.Location = new System.Drawing.Point(32, 408);
             this.LAS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LAS.Name = "LAS";
-            this.LAS.Size = new System.Drawing.Size(112, 25);
+            this.LAS.Size = new System.Drawing.Size(90, 21);
             this.LAS.TabIndex = 11;
             this.LAS.Text = "攻擊速度：";
             this.LAS.Visible = false;
@@ -139,7 +139,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LAC.Location = new System.Drawing.Point(24, 213);
             this.LAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LAC.Name = "LAC";
-            this.LAC.Size = new System.Drawing.Size(112, 25);
+            this.LAC.Size = new System.Drawing.Size(90, 21);
             this.LAC.TabIndex = 10;
             this.LAC.Text = "攻擊次數：";
             // 
@@ -151,7 +151,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LBT.Location = new System.Drawing.Point(235, 213);
             this.LBT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBT.Name = "LBT";
-            this.LBT.Size = new System.Drawing.Size(112, 25);
+            this.LBT.Size = new System.Drawing.Size(90, 21);
             this.LBT.TabIndex = 9;
             this.LBT.Text = "人物呼吸：";
             // 
@@ -163,7 +163,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LST.Location = new System.Drawing.Point(235, 39);
             this.LST.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LST.Name = "LST";
-            this.LST.Size = new System.Drawing.Size(112, 25);
+            this.LST.Size = new System.Drawing.Size(90, 21);
             this.LST.TabIndex = 8;
             this.LST.Text = "系統時間：";
             // 
@@ -175,7 +175,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LMY.Location = new System.Drawing.Point(235, 329);
             this.LMY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LMY.Name = "LMY";
-            this.LMY.Size = new System.Drawing.Size(99, 25);
+            this.LMY.Size = new System.Drawing.Size(80, 21);
             this.LMY.TabIndex = 7;
             this.LMY.Text = "滑鼠   Y：";
             // 
@@ -187,7 +187,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LMX.Location = new System.Drawing.Point(24, 329);
             this.LMX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LMX.Name = "LMX";
-            this.LMX.Size = new System.Drawing.Size(100, 25);
+            this.LMX.Size = new System.Drawing.Size(81, 21);
             this.LMX.TabIndex = 6;
             this.LMX.Text = "滑鼠   X：";
             // 
@@ -199,7 +199,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LPY.Location = new System.Drawing.Point(235, 271);
             this.LPY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LPY.Name = "LPY";
-            this.LPY.Size = new System.Drawing.Size(99, 25);
+            this.LPY.Size = new System.Drawing.Size(80, 21);
             this.LPY.TabIndex = 5;
             this.LPY.Text = "人物   Y：";
             // 
@@ -211,7 +211,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LPX.Location = new System.Drawing.Point(24, 271);
             this.LPX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LPX.Name = "LPX";
-            this.LPX.Size = new System.Drawing.Size(100, 25);
+            this.LPX.Size = new System.Drawing.Size(81, 21);
             this.LPX.TabIndex = 4;
             this.LPX.Text = "人物   X：";
             // 
@@ -223,7 +223,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LMOB.Location = new System.Drawing.Point(235, 155);
             this.LMOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LMOB.Name = "LMOB";
-            this.LMOB.Size = new System.Drawing.Size(92, 25);
+            this.LMOB.Size = new System.Drawing.Size(74, 21);
             this.LMOB.TabIndex = 3;
             this.LMOB.Text = "怪物數：";
             // 
@@ -235,7 +235,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LRed.Location = new System.Drawing.Point(24, 155);
             this.LRed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRed.Name = "LRed";
-            this.LRed.Size = new System.Drawing.Size(92, 25);
+            this.LRed.Size = new System.Drawing.Size(74, 21);
             this.LRed.TabIndex = 2;
             this.LRed.Text = "紅點數：";
             // 
@@ -247,7 +247,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LMP.Location = new System.Drawing.Point(235, 97);
             this.LMP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LMP.Name = "LMP";
-            this.LMP.Size = new System.Drawing.Size(65, 25);
+            this.LMP.Size = new System.Drawing.Size(52, 21);
             this.LMP.TabIndex = 1;
             this.LMP.Text = "MP：";
             // 
@@ -259,13 +259,12 @@ namespace Aron_For_TwMs_113_4.Components
             this.LHP.Location = new System.Drawing.Point(24, 97);
             this.LHP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LHP.Name = "LHP";
-            this.LHP.Size = new System.Drawing.Size(61, 25);
+            this.LHP.Size = new System.Drawing.Size(49, 21);
             this.LHP.TabIndex = 0;
             this.LHP.Text = "HP：";
             // 
             // t_Info
             // 
-            this.t_Info.Enabled = true;
             this.t_Info.Interval = 50;
             this.t_Info.Tick += new System.EventHandler(this.t_Info_Tick);
             // 

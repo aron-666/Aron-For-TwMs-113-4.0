@@ -21,6 +21,8 @@ namespace Aron_For_TwMs_113_4
 
         private List<UserControl> userControls = new List<UserControl>(5);
         private ProcessTools.CtTools.CtDataCollection ct;
+
+        private readonly GameInfo GameInfo = new GameInfo();
         public Form1()
         {
             InitializeComponent();
@@ -75,6 +77,8 @@ namespace Aron_For_TwMs_113_4
             var con = sender as Control;
 
             int index = int.Parse(con.Tag.ToString());
+            if (userControls[index].Equals(panelBody.Controls[1]))
+                return;
 
             if (panelBody.Controls.Count > 1)
                 panelBody.Controls.RemoveAt(1);
@@ -87,5 +91,8 @@ namespace Aron_For_TwMs_113_4
         }
 
         public ProcessTools.CtTools.CtDataCollection GetCt() => ct;
+
+        public GameInfo GetGameInfo() => GameInfo;
+        
     }
 }
