@@ -34,6 +34,7 @@ namespace Aron_For_TwMs_113_4
             userControls.Add(new Components.AreaLock(this));
             userControls.Add(new Components.AreaKeys(this));
             userControls.Add(new Components.AreaInfo(this));
+            userControls.Add(new Components.AreaControl(this));
 
             panelBody.Controls.Add(userControls[0], 1, 0);
             
