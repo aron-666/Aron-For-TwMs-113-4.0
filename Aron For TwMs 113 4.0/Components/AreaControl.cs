@@ -22,6 +22,7 @@ namespace Aron_For_TwMs_113_4.Components
 
         private void AreaControl_Load(object sender, EventArgs e)
         {
+            Dock = DockStyle.Fill;
 
         }
     }

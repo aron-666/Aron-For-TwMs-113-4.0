@@ -40,7 +40,7 @@ namespace Aron_For_TwMs_113_4
             this.btnMin = new System.Windows.Forms.Button();
             this.panelBody = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAreaControl = new System.Windows.Forms.Button();
             this.BtnAreaInfo = new System.Windows.Forms.Button();
             this.btnAreaKeys = new System.Windows.Forms.Button();
             this.btnAreaLock = new System.Windows.Forms.Button();
@@ -201,7 +201,7 @@ namespace Aron_For_TwMs_113_4
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Controls.Add(this.button4, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnAreaControl, 3, 0);
             this.tableLayoutPanel5.Controls.Add(this.BtnAreaInfo, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnAreaKeys, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnAreaLock, 0, 0);
@@ -214,18 +214,18 @@ namespace Aron_For_TwMs_113_4
             this.tableLayoutPanel5.Size = new System.Drawing.Size(449, 46);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // button4
+            // btnAreaControl
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(351, 9);
-            this.button4.Margin = new System.Windows.Forms.Padding(15, 9, 15, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(83, 28);
-            this.button4.TabIndex = 3;
-            this.button4.Tag = "3";
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.btnArea_Click);
+            this.btnAreaControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAreaControl.Location = new System.Drawing.Point(351, 9);
+            this.btnAreaControl.Margin = new System.Windows.Forms.Padding(15, 9, 15, 9);
+            this.btnAreaControl.Name = "btnAreaControl";
+            this.btnAreaControl.Size = new System.Drawing.Size(83, 28);
+            this.btnAreaControl.TabIndex = 3;
+            this.btnAreaControl.Tag = "3";
+            this.btnAreaControl.Text = "功能區";
+            this.btnAreaControl.UseVisualStyleBackColor = true;
+            this.btnAreaControl.Click += new System.EventHandler(this.btnArea_Click);
             // 
             // BtnAreaInfo
             // 
@@ -249,7 +249,7 @@ namespace Aron_For_TwMs_113_4
             this.btnAreaKeys.Size = new System.Drawing.Size(82, 28);
             this.btnAreaKeys.TabIndex = 1;
             this.btnAreaKeys.Tag = "1";
-            this.btnAreaKeys.Text = "鎖定區";
+            this.btnAreaKeys.Text = "按鍵區";
             this.btnAreaKeys.UseVisualStyleBackColor = true;
             this.btnAreaKeys.Click += new System.EventHandler(this.btnArea_Click);
             // 
@@ -272,9 +272,9 @@ namespace Aron_For_TwMs_113_4
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lbStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 543);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 549);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(455, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(455, 24);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -283,7 +283,7 @@ namespace Aron_For_TwMs_113_4
             this.lbStatus.Font = new System.Drawing.Font("Microsoft JhengHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbStatus.ForeColor = System.Drawing.Color.White;
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(67, 24);
+            this.lbStatus.Size = new System.Drawing.Size(54, 19);
             this.lbStatus.Text = "未鎖定";
             // 
             // Form1
@@ -324,7 +324,7 @@ namespace Aron_For_TwMs_113_4
         private System.Windows.Forms.Button btnMin;
         private System.Windows.Forms.TableLayoutPanel panelBody;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAreaControl;
         private System.Windows.Forms.Button BtnAreaInfo;
         private System.Windows.Forms.Button btnAreaKeys;
         private System.Windows.Forms.Button btnAreaLock;

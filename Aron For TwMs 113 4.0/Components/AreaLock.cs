@@ -33,6 +33,11 @@ namespace Aron_For_TwMs_113_4.Components
             var s = Properties.Settings.Default;
             textBox1.DataBindings.Add(new Binding("Text", s, "Lock_Filter"));
             LoadProcessList(textBox1.Text);
+            ckAutoSave.DataBindings.Add(new Binding("Checked", s, "IsAutoSave"));
+            CkStart.DataBindings.Add(new Binding("Checked", s, "IsAutoPlay"));
+            CkBypass.DataBindings.Add(new Binding("Checked", s, "IsAutoBypass"));
+            radAutoLock.Checked = s.IsAutoLock;
+            radSelect.Checked = !s.IsAutoLock;
         }
 
         private void LoadProcessList(string filter = null)
@@ -68,7 +73,7 @@ namespace Aron_For_TwMs_113_4.Components
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!radioButton2.Checked)
+            if (!radSelect.Checked)
                 return;
 
             var item = comboBox1.SelectedItem as ProcessInfo;
@@ -111,26 +116,36 @@ namespace Aron_For_TwMs_113_4.Components
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            if (ckAutoSave.Checked)
+            {
+                Properties.Settings.Default.IsAutoLock = radAutoLock.Checked;
+                Properties.Settings.Default.Save();
+            }
+            if (radAutoLock.Checked)
             {
                 button1.Enabled = false;
                 comboBox1.Enabled = false;
                 comboBox1.SelectedIndex = 0;
-                t_Lock.Enabled = true;
+                //t_Lock.Enabled = true;
             }
             else
             {
-                t_Lock.Enabled = false;
+                //t_Lock.Enabled = false;
             }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton2.Checked)
+            if (ckAutoSave.Checked)
+            {
+                Properties.Settings.Default.IsAutoLock = radAutoLock.Checked;
+                Properties.Settings.Default.Save();
+            }
+            if (radSelect.Checked)
             {
                 button1.Enabled = true;
                 comboBox1.Enabled = true;
-                t_Lock.Enabled = false;
+                //t_Lock.Enabled = false;
             }
             else
             {
@@ -142,7 +157,7 @@ namespace Aron_For_TwMs_113_4.Components
         {
             try
             {
-                if (!MapleProcess.IsOpen)
+                if (!MapleProcess.IsOpen && radAutoLock.Checked)
                 {
                     Process[] ps = Process.GetProcesses();
                     var p = ps.Where(x => x.ProcessName.Contains(textBox1.Text)).FirstOrDefault();
@@ -182,6 +197,24 @@ namespace Aron_For_TwMs_113_4.Components
                 {
 
                 }
+
+                if (MapleProcess.IsOpen)
+                {
+                    StringBuilder ClassName = new StringBuilder(256);
+                    GetClassName(MapleProcess.MsProc.MainWindowHandle, ClassName, ClassName.Capacity);
+                    if (ClassName.ToString() == "StartUpDlgClass")
+                    {
+                        if (CkStart.Checked)
+                        {
+                            Task.Factory.StartNew(() =>
+                            {
+                                Thread.Sleep(1000);
+                                MapleProcess.MsProc.CloseMainWindow();
+                            });
+
+                        }
+                    }
+                }
             }
             catch(Exception ex)
             {
@@ -194,8 +227,11 @@ namespace Aron_For_TwMs_113_4.Components
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Lock_Filter = textBox1.Text;
-            Properties.Settings.Default.Save();
+            if (ckAutoSave.Checked)
+            {
+                Properties.Settings.Default.Lock_Filter = textBox1.Text;
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -206,6 +242,30 @@ namespace Aron_For_TwMs_113_4.Components
         private void Bubypass_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void S_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.IsAutoSave = ckAutoSave.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void CkBypass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckAutoSave.Checked)
+            {
+                Properties.Settings.Default.IsAutoBypass = CkBypass.Checked;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void CkStart_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckAutoSave.Checked)
+            {
+                Properties.Settings.Default.IsAutoPlay = CkStart.Checked;
+                Properties.Settings.Default.Save();
+            }
         }
     }
 

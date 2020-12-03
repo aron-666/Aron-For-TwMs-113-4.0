@@ -34,5 +34,53 @@ namespace Aron_For_TwMs_113_4.Properties {
                 this["Lock_Filter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsAutoSave {
+            get {
+                return ((bool)(this["IsAutoSave"]));
+            }
+            set {
+                this["IsAutoSave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsAutoLock {
+            get {
+                return ((bool)(this["IsAutoLock"]));
+            }
+            set {
+                this["IsAutoLock"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsAutoPlay {
+            get {
+                return ((bool)(this["IsAutoPlay"]));
+            }
+            set {
+                this["IsAutoPlay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsAutoBypass {
+            get {
+                return ((bool)(this["IsAutoBypass"]));
+            }
+            set {
+                this["IsAutoBypass"] = value;
+            }
+        }
     }
 }
