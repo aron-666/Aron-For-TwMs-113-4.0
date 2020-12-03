@@ -24,7 +24,7 @@ namespace Aron_For_TwMs_113_4.Components
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
 
-        
+        private Process DxWnd;
         public AreaLock(IComponentEvents componentEvents)
         {
             InitializeComponent();
@@ -41,6 +41,7 @@ namespace Aron_For_TwMs_113_4.Components
             CkStart.DataBindings.Add(new Binding("Checked", s, "IsAutoPlay"));
             CkBypass.DataBindings.Add(new Binding("Checked", s, "IsAutoBypass"));
             ckNotify.DataBindings.Add(new Binding("Checked", s, "IsNotify"));
+            ckDwWnd.DataBindings.Add(new Binding("Checked", s, "IsDxWnd"));
             radAutoLock.Checked = s.IsAutoLock;
             radSelect.Checked = !s.IsAutoLock;
 
@@ -199,19 +200,24 @@ namespace Aron_For_TwMs_113_4.Components
         {
             try
             {
+                if (MapleProcess.IsOpen && radAutoLock.Checked)
+                {
+                    _componentEvents.SetStatusText($"已鎖定 {MapleProcess.Pid}");
+                }
                 if (!MapleProcess.IsOpen && radAutoLock.Checked)
                 {
+
                     Process[] ps = Process.GetProcesses();
                     var p = ps.Where(x => x.ProcessName.Contains(textBox1.Text)).FirstOrDefault();
                     if (p == null)
                     {
                         _componentEvents.SetStatusText("未鎖定");
+                        foreach (var i in ps) i.Dispose();
                         return;
                     }
 
                     if (MapleProcess.LoadFromPid(p.Id))
                     {
-                        _componentEvents.SetStatusText($"已鎖定 {MapleProcess.Pid}");
                         StringBuilder ClassName = new StringBuilder(256);
                         GetClassName(MapleProcess.MsProc.MainWindowHandle, ClassName, ClassName.Capacity);
                         if (ClassName.ToString() == "StartUpDlgClass")
@@ -232,12 +238,12 @@ namespace Aron_For_TwMs_113_4.Components
                             }
                         }
                     }
+                    foreach (var i in ps) i.Dispose();
 
-
+                    
                 }
                 else
                 {
-
                 }
 
                 if (MapleProcess.IsOpen)
@@ -324,7 +330,6 @@ namespace Aron_For_TwMs_113_4.Components
             
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(openFileDialog1.FileName);
             }
         }
 
@@ -379,6 +384,71 @@ namespace Aron_For_TwMs_113_4.Components
         private void lbExeFile_TextChanged(object sender, EventArgs e)
         {
             _componentEvents.ExePath = lbExeFile.Text;
+            if (ckDwWnd.Checked)
+            {
+                //DxWnd.TARGETMAP[] args = new DxWnd.TARGETMAP[2]
+                //{
+                //    new DxWnd.TARGETMAP(){ path = lbExeFile.Text, dxversion = 8, flags = 0, initx = 0, inity = 0, minx = 0, miny = 0, maxx = 1920, maxy = 1080 },
+                //    new DxWnd.TARGETMAP()
+                //};
+                //DxWnd.EndHook();
+                //DxWnd.SetTarget(args);
+                //DxWnd.StartHook();
+                var id = Process.GetCurrentProcess().Id;
+                ProcessStartInfo info = new ProcessStartInfo("DxWnd.exe")
+                {
+                    Arguments = $"{lbExeFile.Text} {id}"
+                };
+
+                
+
+                if (info.Arguments.Length > 1 && info.Arguments[info.Arguments.Length - 1] == ' ') info.Arguments = info.Arguments.Remove(info.Arguments.Length - 1);
+                DxWnd = Process.Start(info);
+            }
+            else
+            {
+                DxWnd?.Kill();
+                DxWnd?.Dispose();
+                DxWnd = null;
+            }
+        }
+
+        private void ckDwWnd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckAutoSave.Checked)
+            {
+                Properties.Settings.Default.IsDxWnd = ckDwWnd.Checked;
+                Properties.Settings.Default.Save();
+            }
+            if (ckDwWnd.Checked)
+            {
+
+                //DxWnd.TARGETMAP[] args = new DxWnd.TARGETMAP[2]
+                //{
+                //    new DxWnd.TARGETMAP(){ path = lbExeFile.Text, dxversion = 8, flags = 0, initx = 0, inity = 0, minx = 0, miny = 0, maxx = 1920, maxy = 1080 },
+                //    new DxWnd.TARGETMAP()
+                //};
+                //DxWnd.EndHook();
+                //DxWnd.SetTarget(args);
+                //DxWnd.StartHook();
+
+                var id = Process.GetCurrentProcess().Id;
+                ProcessStartInfo info = new ProcessStartInfo("DxWnd.exe")
+                {
+                    Arguments = $"{lbExeFile.Text} {id}"
+                };
+
+
+
+                if (info.Arguments.Length > 1 && info.Arguments[info.Arguments.Length - 1] == ' ') info.Arguments = info.Arguments.Remove(info.Arguments.Length - 1);
+                DxWnd = Process.Start(info);
+            }
+            else
+            {
+                DxWnd?.Kill();
+                DxWnd?.Dispose();
+                DxWnd = null;
+            }
         }
     }
 

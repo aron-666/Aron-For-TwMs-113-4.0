@@ -12,6 +12,8 @@ namespace Aron_For_TwMs_113_4.Components
     {
         string ExePath { get; set; }
         Data StartResualt { get; set; }
+        List<HotKeyRegister> HotKeys { get; set; }
+        EventHandler OnStatusChange { get; set; }
 
         CtDataCollection GetCt();
         GameInfo GetGameInfo();

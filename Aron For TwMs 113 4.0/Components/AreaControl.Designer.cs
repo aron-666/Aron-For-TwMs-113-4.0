@@ -145,6 +145,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck走掉.Name = "Ck走掉";
             this.Ck走掉.Size = new System.Drawing.Size(86, 19);
             this.Ck走掉.TabIndex = 125;
+            this.Ck走掉.Tag = "走怪掉落";
             this.Ck走掉.Text = "走怪掉落";
             this.Ck走掉.UseVisualStyleBackColor = true;
             // 
@@ -158,6 +159,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck控怪.Name = "Ck控怪";
             this.Ck控怪.Size = new System.Drawing.Size(86, 19);
             this.Ck控怪.TabIndex = 124;
+            this.Ck控怪.Tag = "控制走怪";
             this.Ck控怪.Text = "走怪控制";
             this.Ck控怪.UseVisualStyleBackColor = true;
             // 
@@ -171,6 +173,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck超撿.Name = "Ck超撿";
             this.Ck超撿.Size = new System.Drawing.Size(86, 19);
             this.Ck超撿.TabIndex = 123;
+            this.Ck超撿.Tag = "超級撿物";
             this.Ck超撿.Text = "超級撿物";
             this.Ck超撿.UseVisualStyleBackColor = true;
             // 
@@ -179,11 +182,12 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck定怪.AutoSize = true;
             this.Ck定怪.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck定怪.ForeColor = System.Drawing.Color.White;
-            this.Ck定怪.Location = new System.Drawing.Point(341, 272);
+            this.Ck定怪.Location = new System.Drawing.Point(342, 272);
             this.Ck定怪.Margin = new System.Windows.Forms.Padding(4);
             this.Ck定怪.Name = "Ck定怪";
             this.Ck定怪.Size = new System.Drawing.Size(56, 19);
             this.Ck定怪.TabIndex = 120;
+            this.Ck定怪.Tag = "定怪";
             this.Ck定怪.Text = "定怪";
             this.Ck定怪.UseVisualStyleBackColor = true;
             // 
@@ -216,58 +220,58 @@ namespace Aron_For_TwMs_113_4.Components
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label8.Location = new System.Drawing.Point(340, 210);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 15);
+            this.label8.Size = new System.Drawing.Size(59, 12);
             this.label8.TabIndex = 117;
             this.label8.Text = "CTRL+F11";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label9.Location = new System.Drawing.Point(225, 210);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 15);
+            this.label9.Size = new System.Drawing.Size(59, 12);
             this.label9.TabIndex = 116;
             this.label9.Text = "CTRL+F10";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label10.Location = new System.Drawing.Point(14, 45);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 15);
+            this.label10.Size = new System.Drawing.Size(49, 12);
             this.label10.TabIndex = 115;
             this.label10.Text = "CTRL+D";
             // 
             // TeReMP
             // 
-            this.TeReMP.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeReMP.Location = new System.Drawing.Point(177, 137);
+            this.TeReMP.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TeReMP.Location = new System.Drawing.Point(177, 141);
             this.TeReMP.Margin = new System.Windows.Forms.Padding(4);
             this.TeReMP.MaxLength = 3;
             this.TeReMP.Multiline = true;
             this.TeReMP.Name = "TeReMP";
-            this.TeReMP.Size = new System.Drawing.Size(46, 26);
+            this.TeReMP.Size = new System.Drawing.Size(46, 22);
             this.TeReMP.TabIndex = 114;
             this.TeReMP.Text = "1";
             this.TeReMP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TeReHP
             // 
-            this.TeReHP.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeReHP.Location = new System.Drawing.Point(90, 137);
+            this.TeReHP.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TeReHP.Location = new System.Drawing.Point(90, 141);
             this.TeReHP.Margin = new System.Windows.Forms.Padding(4);
             this.TeReHP.MaxLength = 3;
             this.TeReHP.Multiline = true;
             this.TeReHP.Name = "TeReHP";
-            this.TeReHP.Size = new System.Drawing.Size(46, 26);
+            this.TeReHP.Size = new System.Drawing.Size(46, 22);
             this.TeReHP.TabIndex = 113;
             this.TeReHP.Text = "1";
             this.TeReHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -282,6 +286,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkRe.Name = "CkRe";
             this.CkRe.Size = new System.Drawing.Size(229, 19);
             this.CkRe.TabIndex = 112;
+            this.CkRe.Tag = "";
             this.CkRe.Text = "恢復 HP            倍 MP            倍";
             this.CkRe.UseVisualStyleBackColor = true;
             // 
@@ -295,6 +300,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck滑鼠SS.Name = "Ck滑鼠SS";
             this.Ck滑鼠SS.Size = new System.Drawing.Size(72, 19);
             this.Ck滑鼠SS.TabIndex = 111;
+            this.Ck滑鼠SS.Tag = "滑鼠SS";
             this.Ck滑鼠SS.Text = "滑鼠SS";
             this.Ck滑鼠SS.UseVisualStyleBackColor = true;
             // 
@@ -303,11 +309,12 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck箱子.AutoSize = true;
             this.Ck箱子.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck箱子.ForeColor = System.Drawing.Color.White;
-            this.Ck箱子.Location = new System.Drawing.Point(228, 234);
+            this.Ck箱子.Location = new System.Drawing.Point(227, 231);
             this.Ck箱子.Margin = new System.Windows.Forms.Padding(4);
             this.Ck箱子.Name = "Ck箱子";
             this.Ck箱子.Size = new System.Drawing.Size(101, 19);
             this.Ck箱子.TabIndex = 110;
+            this.Ck箱子.Tag = "全圖打箱子";
             this.Ck箱子.Text = "全圖打箱子";
             this.Ck箱子.UseVisualStyleBackColor = true;
             // 
@@ -321,6 +328,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck圖鑑.Name = "Ck圖鑑";
             this.Ck圖鑑.Size = new System.Drawing.Size(86, 19);
             this.Ck圖鑑.TabIndex = 109;
+            this.Ck圖鑑.Tag = "圖鑑全開";
             this.Ck圖鑑.Text = "圖鑑全開";
             this.Ck圖鑑.UseVisualStyleBackColor = true;
             // 
@@ -329,11 +337,12 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck不顯傷害.AutoSize = true;
             this.Ck不顯傷害.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck不顯傷害.ForeColor = System.Drawing.Color.White;
-            this.Ck不顯傷害.Location = new System.Drawing.Point(117, 234);
+            this.Ck不顯傷害.Location = new System.Drawing.Point(121, 231);
             this.Ck不顯傷害.Margin = new System.Windows.Forms.Padding(4);
             this.Ck不顯傷害.Name = "Ck不顯傷害";
             this.Ck不顯傷害.Size = new System.Drawing.Size(86, 19);
             this.Ck不顯傷害.TabIndex = 108;
+            this.Ck不顯傷害.Tag = "不顯傷害";
             this.Ck不顯傷害.Text = "不顯傷害";
             this.Ck不顯傷害.UseVisualStyleBackColor = true;
             // 
@@ -342,11 +351,12 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck物品定位.AutoSize = true;
             this.Ck物品定位.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck物品定位.ForeColor = System.Drawing.Color.White;
-            this.Ck物品定位.Location = new System.Drawing.Point(341, 234);
+            this.Ck物品定位.Location = new System.Drawing.Point(342, 231);
             this.Ck物品定位.Margin = new System.Windows.Forms.Padding(4);
             this.Ck物品定位.Name = "Ck物品定位";
             this.Ck物品定位.Size = new System.Drawing.Size(86, 19);
             this.Ck物品定位.TabIndex = 107;
+            this.Ck物品定位.Tag = "物品定位";
             this.Ck物品定位.Text = "物品定位";
             this.Ck物品定位.UseVisualStyleBackColor = true;
             // 
@@ -360,6 +370,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck怪物不退.Name = "Ck怪物不退";
             this.Ck怪物不退.Size = new System.Drawing.Size(86, 19);
             this.Ck怪物不退.TabIndex = 106;
+            this.Ck怪物不退.Tag = "怪物不退";
             this.Ck怪物不退.Text = "怪物不退";
             this.Ck怪物不退.UseVisualStyleBackColor = true;
             // 
@@ -373,6 +384,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck快速生怪.Name = "Ck快速生怪";
             this.Ck快速生怪.Size = new System.Drawing.Size(86, 19);
             this.Ck快速生怪.TabIndex = 105;
+            this.Ck快速生怪.Tag = "快速生怪";
             this.Ck快速生怪.Text = "快速生怪";
             this.Ck快速生怪.UseVisualStyleBackColor = true;
             // 
@@ -386,6 +398,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck格檔.Name = "Ck格檔";
             this.Ck格檔.Size = new System.Drawing.Size(89, 19);
             this.Ck格檔.TabIndex = 104;
+            this.Ck格檔.Tag = "格檔";
             this.Ck格檔.Text = "100%格檔";
             this.Ck格檔.UseVisualStyleBackColor = true;
             // 
@@ -399,6 +412,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck笨怪.Name = "Ck笨怪";
             this.Ck笨怪.Size = new System.Drawing.Size(56, 19);
             this.Ck笨怪.TabIndex = 103;
+            this.Ck笨怪.Tag = "笨怪";
             this.Ck笨怪.Text = "笨怪";
             this.Ck笨怪.UseVisualStyleBackColor = true;
             // 
@@ -412,6 +426,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck左右.Name = "Ck左右";
             this.Ck左右.Size = new System.Drawing.Size(86, 19);
             this.Ck左右.TabIndex = 96;
+            this.Ck左右.Tag = "人物左右";
             this.Ck左右.Text = "人物左右";
             this.Ck左右.UseVisualStyleBackColor = true;
             // 
@@ -425,6 +440,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck牆值左右.Name = "Ck牆值左右";
             this.Ck牆值左右.Size = new System.Drawing.Size(86, 19);
             this.Ck牆值左右.TabIndex = 95;
+            this.Ck牆值左右.Tag = "牆值左右";
             this.Ck牆值左右.Text = "牆值左右";
             this.Ck牆值左右.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Ck牆值左右.UseVisualStyleBackColor = true;
@@ -439,18 +455,19 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck寵物全圖吸.Name = "Ck寵物全圖吸";
             this.Ck寵物全圖吸.Size = new System.Drawing.Size(116, 19);
             this.Ck寵物全圖吸.TabIndex = 20;
+            this.Ck寵物全圖吸.Tag = "寵物全圖吸";
             this.Ck寵物全圖吸.Text = "寵物全圖吸物";
             this.Ck寵物全圖吸.UseVisualStyleBackColor = true;
             // 
             // TeLuk
             // 
             this.TeLuk.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeLuk.Location = new System.Drawing.Point(376, 300);
+            this.TeLuk.Location = new System.Drawing.Point(376, 304);
             this.TeLuk.Margin = new System.Windows.Forms.Padding(4);
             this.TeLuk.MaxLength = 5;
             this.TeLuk.Multiline = true;
             this.TeLuk.Name = "TeLuk";
-            this.TeLuk.Size = new System.Drawing.Size(48, 26);
+            this.TeLuk.Size = new System.Drawing.Size(48, 22);
             this.TeLuk.TabIndex = 19;
             this.TeLuk.Text = "50";
             this.TeLuk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -458,12 +475,12 @@ namespace Aron_For_TwMs_113_4.Components
             // TeInt
             // 
             this.TeInt.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeInt.Location = new System.Drawing.Point(288, 300);
+            this.TeInt.Location = new System.Drawing.Point(288, 304);
             this.TeInt.Margin = new System.Windows.Forms.Padding(4);
             this.TeInt.MaxLength = 5;
             this.TeInt.Multiline = true;
             this.TeInt.Name = "TeInt";
-            this.TeInt.Size = new System.Drawing.Size(47, 26);
+            this.TeInt.Size = new System.Drawing.Size(47, 22);
             this.TeInt.TabIndex = 18;
             this.TeInt.Text = "50";
             this.TeInt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -471,12 +488,12 @@ namespace Aron_For_TwMs_113_4.Components
             // TeDex
             // 
             this.TeDex.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeDex.Location = new System.Drawing.Point(201, 300);
+            this.TeDex.Location = new System.Drawing.Point(201, 304);
             this.TeDex.Margin = new System.Windows.Forms.Padding(4);
             this.TeDex.MaxLength = 5;
             this.TeDex.Multiline = true;
             this.TeDex.Name = "TeDex";
-            this.TeDex.Size = new System.Drawing.Size(48, 26);
+            this.TeDex.Size = new System.Drawing.Size(48, 22);
             this.TeDex.TabIndex = 17;
             this.TeDex.Text = "50";
             this.TeDex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -484,12 +501,12 @@ namespace Aron_For_TwMs_113_4.Components
             // TeStr
             // 
             this.TeStr.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeStr.Location = new System.Drawing.Point(113, 300);
+            this.TeStr.Location = new System.Drawing.Point(113, 304);
             this.TeStr.Margin = new System.Windows.Forms.Padding(4);
             this.TeStr.MaxLength = 5;
             this.TeStr.Multiline = true;
             this.TeStr.Name = "TeStr";
-            this.TeStr.Size = new System.Drawing.Size(48, 26);
+            this.TeStr.Size = new System.Drawing.Size(48, 22);
             this.TeStr.TabIndex = 16;
             this.TeStr.Text = "50";
             this.TeStr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -517,6 +534,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkMouCS.Name = "CkMouCS";
             this.CkMouCS.Size = new System.Drawing.Size(73, 19);
             this.CkMouCS.TabIndex = 14;
+            this.CkMouCS.Tag = "滑鼠CS";
             this.CkMouCS.Text = "滑鼠CS";
             this.CkMouCS.UseVisualStyleBackColor = true;
             // 
@@ -530,6 +548,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck全圖吸怪.Name = "Ck全圖吸怪";
             this.Ck全圖吸怪.Size = new System.Drawing.Size(86, 19);
             this.Ck全圖吸怪.TabIndex = 13;
+            this.Ck全圖吸怪.Tag = "全圖吸怪";
             this.Ck全圖吸怪.Text = "全圖吸怪";
             this.Ck全圖吸怪.UseVisualStyleBackColor = true;
             // 
@@ -543,6 +562,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck全圖吸物.Name = "Ck全圖吸物";
             this.Ck全圖吸物.Size = new System.Drawing.Size(86, 19);
             this.Ck全圖吸物.TabIndex = 12;
+            this.Ck全圖吸物.Tag = "全圖吸物";
             this.Ck全圖吸物.Text = "全圖吸物";
             this.Ck全圖吸物.UseVisualStyleBackColor = true;
             // 
@@ -556,18 +576,19 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck全圖打.Name = "Ck全圖打";
             this.Ck全圖打.Size = new System.Drawing.Size(71, 19);
             this.Ck全圖打.TabIndex = 11;
+            this.Ck全圖打.Tag = "全圖打";
             this.Ck全圖打.Text = "全圖打";
             this.Ck全圖打.UseVisualStyleBackColor = true;
             // 
             // TeRed
             // 
-            this.TeRed.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeRed.Location = new System.Drawing.Point(358, 55);
+            this.TeRed.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TeRed.Location = new System.Drawing.Point(358, 59);
             this.TeRed.Margin = new System.Windows.Forms.Padding(4);
             this.TeRed.MaxLength = 3;
             this.TeRed.Multiline = true;
             this.TeRed.Name = "TeRed";
-            this.TeRed.Size = new System.Drawing.Size(39, 26);
+            this.TeRed.Size = new System.Drawing.Size(39, 22);
             this.TeRed.TabIndex = 10;
             this.TeRed.Text = "0";
             this.TeRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -633,6 +654,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck無敵.Name = "Ck無敵";
             this.Ck無敵.Size = new System.Drawing.Size(56, 19);
             this.Ck無敵.TabIndex = 5;
+            this.Ck無敵.Tag = "無敵";
             this.Ck無敵.Text = "無敵";
             this.Ck無敵.UseVisualStyleBackColor = true;
             // 
@@ -667,6 +689,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck天使.Name = "Ck天使";
             this.Ck天使.Size = new System.Drawing.Size(86, 19);
             this.Ck天使.TabIndex = 18;
+            this.Ck天使.Tag = "終極天使";
             this.Ck天使.Text = "終極天使";
             this.Ck天使.UseVisualStyleBackColor = true;
             // 
@@ -680,6 +703,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck蘋果.Name = "Ck蘋果";
             this.Ck蘋果.Size = new System.Drawing.Size(86, 19);
             this.Ck蘋果.TabIndex = 6;
+            this.Ck蘋果.Tag = "紫色蘋果";
             this.Ck蘋果.Text = "紫色蘋果";
             this.Ck蘋果.UseVisualStyleBackColor = true;
             // 
@@ -692,6 +716,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck楓祝.Name = "Ck楓祝";
             this.Ck楓祝.Size = new System.Drawing.Size(70, 19);
             this.Ck楓祝.TabIndex = 4;
+            this.Ck楓祝.Tag = "楓葉祝福";
             this.Ck楓祝.Text = "楓祝30";
             this.Ck楓祝.UseVisualStyleBackColor = true;
             // 
@@ -704,6 +729,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck攻速.Name = "Ck攻速";
             this.Ck攻速.Size = new System.Drawing.Size(56, 19);
             this.Ck攻速.TabIndex = 5;
+            this.Ck攻速.Tag = "攻速";
             this.Ck攻速.Text = "攻速";
             this.Ck攻速.UseVisualStyleBackColor = true;
             // 
@@ -716,6 +742,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck會心.Name = "Ck會心";
             this.Ck會心.Size = new System.Drawing.Size(86, 19);
             this.Ck會心.TabIndex = 3;
+            this.Ck會心.Tag = "會心之眼";
             this.Ck會心.Text = "會心之眼";
             this.Ck會心.UseVisualStyleBackColor = true;
             // 
@@ -728,6 +755,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck速激.Name = "Ck速激";
             this.Ck速激.Size = new System.Drawing.Size(86, 19);
             this.Ck速激.TabIndex = 2;
+            this.Ck速激.Tag = "速度激發";
             this.Ck速激.Text = "速度激發";
             this.Ck速激.UseVisualStyleBackColor = true;
             // 
@@ -740,6 +768,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkMP無限.Name = "CkMP無限";
             this.CkMP無限.Size = new System.Drawing.Size(86, 19);
             this.CkMP無限.TabIndex = 1;
+            this.CkMP無限.Tag = "無限MP";
             this.CkMP無限.Text = "無限魔力";
             this.CkMP無限.UseVisualStyleBackColor = true;
             // 
@@ -752,6 +781,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck爆擊100.Name = "Ck爆擊100";
             this.Ck爆擊100.Size = new System.Drawing.Size(89, 19);
             this.Ck爆擊100.TabIndex = 0;
+            this.Ck爆擊100.Tag = "爆擊100%";
             this.Ck爆擊100.Text = "爆擊100%";
             this.Ck爆擊100.UseVisualStyleBackColor = true;
             // 

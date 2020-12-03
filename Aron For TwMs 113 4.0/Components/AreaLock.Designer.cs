@@ -51,6 +51,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.lbExeFile = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ckDwWnd = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -156,6 +157,7 @@ namespace Aron_For_TwMs_113_4.Components
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox7.Controls.Add(this.ckDwWnd);
             this.groupBox7.Controls.Add(this.ckNotify);
             this.groupBox7.Controls.Add(this.ckAutoSave);
             this.groupBox7.Controls.Add(this.CkStart);
@@ -320,6 +322,19 @@ namespace Aron_For_TwMs_113_4.Components
             this.openFileDialog1.Filter = "*.exe|*.exe";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // ckDwWnd
+            // 
+            this.ckDwWnd.AutoSize = true;
+            this.ckDwWnd.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ckDwWnd.Location = new System.Drawing.Point(191, 57);
+            this.ckDwWnd.Margin = new System.Windows.Forms.Padding(4);
+            this.ckDwWnd.Name = "ckDwWnd";
+            this.ckDwWnd.Size = new System.Drawing.Size(66, 21);
+            this.ckDwWnd.TabIndex = 16;
+            this.ckDwWnd.Text = "視窗化";
+            this.ckDwWnd.UseVisualStyleBackColor = true;
+            this.ckDwWnd.CheckedChanged += new System.EventHandler(this.ckDwWnd_CheckedChanged);
+            // 
             // AreaLock
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -364,5 +379,6 @@ namespace Aron_For_TwMs_113_4.Components
         private System.Windows.Forms.Button btnUserSetting;
         private System.Windows.Forms.Button btnF5;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.CheckBox ckDwWnd;
     }
 }

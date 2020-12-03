@@ -17,6 +17,7 @@ namespace Aron_For_TwMs_113_4
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            //DxWnd.EndHook();
         }
     }
 }

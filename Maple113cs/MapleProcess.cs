@@ -108,9 +108,14 @@ namespace ProcessTools
 
             }
 
+
             return true;
         }
-        public static void Kill() => MsProc?.Kill();
+        public static void Kill() 
+        {
+            MsProc?.Kill();
+            MsProc = null;
+        }
 
         private static bool CeAutoAsmLoad()
         {

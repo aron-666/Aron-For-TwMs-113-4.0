@@ -1,4 +1,5 @@
 ﻿using Aron_For_TwMs_113_4.Components;
+using ProcessTools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace Aron_For_TwMs_113_4
         public Form1()
         {
             InitializeComponent();
-            var s = File.ReadAllText("113new.CT");
+            var s = File.ReadAllText("lib\\113new.CT");
             ct = ProcessTools.CtTools.CtFactory.Load(s);
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -37,7 +38,10 @@ namespace Aron_For_TwMs_113_4
             userControls.Add(new Components.AreaControl(this));
 
             panelBody.Controls.Add(userControls[0], 1, 0);
-            
+
+            RegistHotKeys();
+            btnStart.ToolTipText = "熱鍵：CTRL + ALT + J";
+            btnStop.ToolTipText = "熱鍵：CTRL + ALT + K";
 
         }
 
@@ -86,10 +90,13 @@ namespace Aron_For_TwMs_113_4
             panelBody.Controls.Add(userControls[index], 1, 0);
         }
 
+        public EventHandler OnStatusChange { get; set; }
+
         public void SetStatusText(string text)
         {
             if(text != lbStatus.Text)
             {
+                OnStatusChange?.Invoke(this, null);
                 SendNotify(text);
                 lbStatus.Text = text;
             }
@@ -119,8 +126,40 @@ namespace Aron_For_TwMs_113_4
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (!File.Exists(ExePath))
+            {
+                MessageBox.Show($"找不到{ExePath}，請重新選擇程式", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var res = StartResualt;
             ProcessTools.MapleProcess.Start(ExePath, StartResualt.Address, StartResualt.Port);
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            MapleProcess.Kill();
+        }
+
+        public List<HotKeyRegister> HotKeys { get; set; }
+
+        private void RegistHotKeys()
+        {
+            HotKeys = new List<HotKeyRegister>(10)
+            {
+                new HotKeyRegister(Handle, 1, (int)(KeyModifiers.Control | KeyModifiers.Alt), Keys.K)
+                {
+                    HotKeyPressed = (e, args) => MapleProcess.Kill()
+                },
+                new HotKeyRegister(Handle, 2, (int)(KeyModifiers.Control | KeyModifiers.Alt), Keys.J)
+                {
+                    HotKeyPressed = (e, args) => btnStart_Click(null, null)
+                }
+            };
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HotKeys.ForEach(x => x.Dispose());
         }
     }
 }

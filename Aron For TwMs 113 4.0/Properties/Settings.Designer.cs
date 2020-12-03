@@ -130,5 +130,17 @@ namespace Aron_For_TwMs_113_4.Properties {
                 this["ServerIndex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDxWnd {
+            get {
+                return ((bool)(this["IsDxWnd"]));
+            }
+            set {
+                this["IsDxWnd"] = value;
+            }
+        }
     }
 }
