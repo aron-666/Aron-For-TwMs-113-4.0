@@ -39,12 +39,21 @@ namespace Aron_For_TwMs_113_4.Components
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.t_Lock = new System.Windows.Forms.Timer(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.ckNotify = new System.Windows.Forms.CheckBox();
             this.ckAutoSave = new System.Windows.Forms.CheckBox();
             this.CkStart = new System.Windows.Forms.CheckBox();
             this.Bubypass = new System.Windows.Forms.Button();
             this.CkBypass = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnF5 = new System.Windows.Forms.Button();
+            this.btnUserSetting = new System.Windows.Forms.Button();
+            this.lbExeFile = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -147,6 +156,7 @@ namespace Aron_For_TwMs_113_4.Components
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox7.Controls.Add(this.ckNotify);
             this.groupBox7.Controls.Add(this.ckAutoSave);
             this.groupBox7.Controls.Add(this.CkStart);
             this.groupBox7.Controls.Add(this.Bubypass);
@@ -161,6 +171,19 @@ namespace Aron_For_TwMs_113_4.Components
             this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Options";
+            // 
+            // ckNotify
+            // 
+            this.ckNotify.AutoSize = true;
+            this.ckNotify.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ckNotify.Location = new System.Drawing.Point(104, 57);
+            this.ckNotify.Margin = new System.Windows.Forms.Padding(4);
+            this.ckNotify.Name = "ckNotify";
+            this.ckNotify.Size = new System.Drawing.Size(79, 21);
+            this.ckNotify.TabIndex = 15;
+            this.ckNotify.Text = "通知開關";
+            this.ckNotify.UseVisualStyleBackColor = true;
+            this.ckNotify.CheckedChanged += new System.EventHandler(this.ckNotify_CheckedChanged);
             // 
             // ckAutoSave
             // 
@@ -191,10 +214,10 @@ namespace Aron_For_TwMs_113_4.Components
             // Bubypass
             // 
             this.Bubypass.ForeColor = System.Drawing.Color.Black;
-            this.Bubypass.Location = new System.Drawing.Point(346, 23);
+            this.Bubypass.Location = new System.Drawing.Point(348, 28);
             this.Bubypass.Margin = new System.Windows.Forms.Padding(4);
             this.Bubypass.Name = "Bubypass";
-            this.Bubypass.Size = new System.Drawing.Size(85, 58);
+            this.Bubypass.Size = new System.Drawing.Size(83, 50);
             this.Bubypass.TabIndex = 12;
             this.Bubypass.Text = "手動注入ByPass";
             this.Bubypass.UseVisualStyleBackColor = true;
@@ -213,10 +236,95 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkBypass.UseVisualStyleBackColor = true;
             this.CkBypass.CheckedChanged += new System.EventHandler(this.CkBypass_CheckedChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.btnF5);
+            this.groupBox2.Controls.Add(this.btnUserSetting);
+            this.groupBox2.Controls.Add(this.lbExeFile);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(8, 213);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(439, 123);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "啟動器";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(9, 31);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(174, 22);
+            this.comboBox2.TabIndex = 10;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // btnF5
+            // 
+            this.btnF5.ForeColor = System.Drawing.Color.Black;
+            this.btnF5.Location = new System.Drawing.Point(203, 19);
+            this.btnF5.Margin = new System.Windows.Forms.Padding(4);
+            this.btnF5.Name = "btnF5";
+            this.btnF5.Size = new System.Drawing.Size(63, 41);
+            this.btnF5.TabIndex = 19;
+            this.btnF5.Text = "刷新";
+            this.btnF5.UseVisualStyleBackColor = true;
+            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
+            // 
+            // btnUserSetting
+            // 
+            this.btnUserSetting.ForeColor = System.Drawing.Color.Black;
+            this.btnUserSetting.Location = new System.Drawing.Point(274, 19);
+            this.btnUserSetting.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUserSetting.Name = "btnUserSetting";
+            this.btnUserSetting.Size = new System.Drawing.Size(68, 41);
+            this.btnUserSetting.TabIndex = 18;
+            this.btnUserSetting.Text = "自訂義";
+            this.btnUserSetting.UseVisualStyleBackColor = true;
+            this.btnUserSetting.Click += new System.EventHandler(this.btnUserSetting_Click);
+            // 
+            // lbExeFile
+            // 
+            this.lbExeFile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbExeFile.Location = new System.Drawing.Point(7, 64);
+            this.lbExeFile.Name = "lbExeFile";
+            this.lbExeFile.Size = new System.Drawing.Size(426, 50);
+            this.lbExeFile.TabIndex = 17;
+            this.lbExeFile.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lbExeFile.TextChanged += new System.EventHandler(this.lbExeFile_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(350, 19);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 41);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "選擇程式";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "MapleStory.exe";
+            this.openFileDialog1.Filter = "*.exe|*.exe";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // AreaLock
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.White;
@@ -228,6 +336,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.groupBox1.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -247,5 +356,13 @@ namespace Aron_For_TwMs_113_4.Components
         private System.Windows.Forms.CheckBox CkBypass;
         private System.Windows.Forms.CheckBox CkStart;
         private System.Windows.Forms.CheckBox ckAutoSave;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox ckNotify;
+        private System.Windows.Forms.Label lbExeFile;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnUserSetting;
+        private System.Windows.Forms.Button btnF5;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

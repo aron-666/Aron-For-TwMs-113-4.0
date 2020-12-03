@@ -37,7 +37,7 @@ namespace Aron_For_TwMs_113_4.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool IsAutoSave {
             get {
                 return ((bool)(this["IsAutoSave"]));
@@ -80,6 +80,54 @@ namespace Aron_For_TwMs_113_4.Properties {
             }
             set {
                 this["IsAutoBypass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsNotify {
+            get {
+                return ((bool)(this["IsNotify"]));
+            }
+            set {
+                this["IsNotify"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MapleStory.exe")]
+        public string ExePath {
+            get {
+                return ((string)(this["ExePath"]));
+            }
+            set {
+                this["ExePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("{\"Name\":\"自訂義\",\"Address\":\"127.0.0.1\",\"Port\":8484,\"Site\":\"\"}")]
+        public string UserStarter {
+            get {
+                return ((string)(this["UserStarter"]));
+            }
+            set {
+                this["UserStarter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ServerIndex {
+            get {
+                return ((int)(this["ServerIndex"]));
+            }
+            set {
+                this["ServerIndex"] = value;
             }
         }
     }

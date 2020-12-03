@@ -29,6 +29,7 @@ namespace Aron_For_TwMs_113_4
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelBar = new System.Windows.Forms.Panel();
@@ -46,6 +47,9 @@ namespace Aron_For_TwMs_113_4
             this.btnAreaLock = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btnStop = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnStart = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -179,18 +183,19 @@ namespace Aron_For_TwMs_113_4
             // 
             // panelBody
             // 
+            this.panelBody.AutoSize = true;
             this.panelBody.ColumnCount = 1;
             this.panelBody.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelBody.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.panelBody.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.panelBody.Location = new System.Drawing.Point(0, 45);
             this.panelBody.Margin = new System.Windows.Forms.Padding(0);
             this.panelBody.Name = "panelBody";
-            this.panelBody.RowCount = 2;
+            this.panelBody.RowCount = 3;
             this.panelBody.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.panelBody.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.panelBody.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.panelBody.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.panelBody.Size = new System.Drawing.Size(455, 528);
             this.panelBody.TabIndex = 16;
             // 
@@ -268,13 +273,16 @@ namespace Aron_For_TwMs_113_4
             // 
             // statusStrip1
             // 
+            this.statusStrip1.AutoSize = false;
             this.statusStrip1.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnStart,
+            this.btnStop,
             this.lbStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 549);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 542);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(455, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(455, 31);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -282,9 +290,41 @@ namespace Aron_For_TwMs_113_4
             // 
             this.lbStatus.Font = new System.Drawing.Font("Microsoft JhengHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbStatus.ForeColor = System.Drawing.Color.White;
+            this.lbStatus.Margin = new System.Windows.Forms.Padding(4, 3, 0, 2);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(54, 19);
+            this.lbStatus.Size = new System.Drawing.Size(54, 26);
             this.lbStatus.Text = "未鎖定";
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Aron For TwMs 113 V4.0";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
+            // 
+            // btnStop
+            // 
+            this.btnStop.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.btnStop.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnStop.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(71, 26);
+            this.btnStop.Text = "結束遊戲";
+            // 
+            // btnStart
+            // 
+            this.btnStart.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.btnStart.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(71, 26);
+            this.btnStart.Text = "啟動遊戲";
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // Form1
             // 
@@ -294,11 +334,13 @@ namespace Aron_For_TwMs_113_4
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Aron For TwMs 113 V4.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.panelBar.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -308,7 +350,6 @@ namespace Aron_For_TwMs_113_4
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -330,6 +371,9 @@ namespace Aron_For_TwMs_113_4
         private System.Windows.Forms.Button btnAreaLock;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbStatus;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ToolStripStatusLabel btnStop;
+        private System.Windows.Forms.ToolStripStatusLabel btnStart;
     }
 }
 

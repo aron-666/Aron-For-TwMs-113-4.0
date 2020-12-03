@@ -6,7 +6,7 @@
       <Value Profile="(Default)">MapleStory</Value>
     </Setting>
     <Setting Name="IsAutoSave" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="IsAutoLock" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -16,6 +16,18 @@
     </Setting>
     <Setting Name="IsAutoBypass" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IsNotify" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MapleStory.exe</Value>
+    </Setting>
+    <Setting Name="UserStarter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">{"Name":"自訂義","Address":"127.0.0.1","Port":8484,"Site":""}</Value>
+    </Setting>
+    <Setting Name="ServerIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

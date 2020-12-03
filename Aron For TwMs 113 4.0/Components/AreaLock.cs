@@ -4,12 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using ProcessTools;
 
 namespace Aron_For_TwMs_113_4.Components
@@ -36,10 +40,48 @@ namespace Aron_For_TwMs_113_4.Components
             ckAutoSave.DataBindings.Add(new Binding("Checked", s, "IsAutoSave"));
             CkStart.DataBindings.Add(new Binding("Checked", s, "IsAutoPlay"));
             CkBypass.DataBindings.Add(new Binding("Checked", s, "IsAutoBypass"));
+            ckNotify.DataBindings.Add(new Binding("Checked", s, "IsNotify"));
             radAutoLock.Checked = s.IsAutoLock;
             radSelect.Checked = !s.IsAutoLock;
+
+
+            openFileDialog1.FileName = System.IO.Path.GetFullPath(s.ExePath);
+            openFileDialog1_FileOk(null, null);
+
+            comboBox2.SelectedIndexChanged += combo2_autoApply;
+            reSetServers();
+
         }
 
+        private void combo2_autoApply(object sender, EventArgs e)
+        {
+            _componentEvents.StartResualt = comboBox2.SelectedItem as Models.Data;
+        }
+
+        private List<Models.Data> GetServers()
+        {
+            
+            WebClient client = new MyWebClient();
+            List<Models.Data> ret = null;
+            try
+            {
+                var url = new Uri(Properties.Resources.SiteRoot + Properties.Resources.StarterUrl);
+                var res = client.DownloadString(url);
+                
+                    
+                var data = JsonConvert.DeserializeObject<Models.ApiResualt<List<Models.Data>>>(res);
+                ret = data.data;
+                
+            }
+            catch
+            {
+                ret = new List<Models.Data>();
+            }
+            var first = JsonConvert.DeserializeObject<Models.Data>(Properties.Settings.Default.UserStarter);
+            ret.Add(first);
+            ret.Reverse();
+            return ret;
+        }
         private void LoadProcessList(string filter = null)
         {
             Process[] ps = Process.GetProcesses();
@@ -241,7 +283,7 @@ namespace Aron_For_TwMs_113_4.Components
 
         private void Bubypass_Click(object sender, EventArgs e)
         {
-
+            _componentEvents.GetCt()["bypass"].CeAutoAsm(true);
         }
 
         private void S_CheckedChanged(object sender, EventArgs e)
@@ -267,6 +309,77 @@ namespace Aron_For_TwMs_113_4.Components
                 Properties.Settings.Default.Save();
             }
         }
+
+        private void ckNotify_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckAutoSave.Checked)
+            {
+                Properties.Settings.Default.IsNotify = ckNotify.Checked;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(openFileDialog1.FileName);
+            }
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            lbExeFile.Text = openFileDialog1.FileName;
+            //儲存到設定
+            if (Path.GetFullPath(Properties.Settings.Default.ExePath) != Path.GetFullPath(openFileDialog1.FileName))
+            {
+                if (ckAutoSave.Checked)
+                {
+                    Properties.Settings.Default.ExePath = openFileDialog1.FileName;
+                    Properties.Settings.Default.Save();
+                }
+            }
+            
+
+        }
+
+        private void reSetServers()
+        {
+            var t = GetServers();
+            comboBox2.SelectedIndexChanged -= comboBox2_SelectedIndexChanged;
+            comboBox2.DataSource = t;
+            if(comboBox2.Items.Count >= Properties.Settings.Default.ServerIndex + 1) 
+                comboBox2.SelectedIndex = Properties.Settings.Default.ServerIndex;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+        }
+        private void btnUserSetting_Click(object sender, EventArgs e)
+        {
+            var setting = new StarterSetting();
+            if(setting.ShowDialog() == DialogResult.OK)
+            {
+                reSetServers();
+            }
+        }
+
+        private void btnF5_Click(object sender, EventArgs e)
+        {
+            reSetServers();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ckAutoSave.Checked)
+            {
+                Properties.Settings.Default.ServerIndex = comboBox2.SelectedIndex;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void lbExeFile_TextChanged(object sender, EventArgs e)
+        {
+            _componentEvents.ExePath = lbExeFile.Text;
+        }
     }
 
     public class ProcessInfo
@@ -290,5 +403,15 @@ namespace Aron_For_TwMs_113_4.Components
         }
 
         public static ProcessInfo Notting => new ProcessInfo() { Name = "Notting", Id = -1 };
+    }
+
+    public class MyWebClient : WebClient
+    {
+        protected override WebRequest GetWebRequest(Uri uri)
+        {
+            WebRequest WR = base.GetWebRequest(uri);
+            WR.Timeout = 4 * 1000;
+            return WR;
+        }
     }
 }

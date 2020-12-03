@@ -88,12 +88,39 @@ namespace Aron_For_TwMs_113_4
 
         public void SetStatusText(string text)
         {
-            lbStatus.Text = text;
+            if(text != lbStatus.Text)
+            {
+                SendNotify(text);
+                lbStatus.Text = text;
+            }
         }
 
         public ProcessTools.CtTools.CtDataCollection GetCt() => ct;
 
         public GameInfo GetGameInfo() => GameInfo;
-        
+
+        public void SendNotify(string text)
+        {
+            if(Properties.Settings.Default.IsNotify)
+                notifyIcon1.ShowBalloonTip(3000, Text, text, ToolTipIcon.Info);
+        }
+
+        public Models.Data StartResualt { get; set; }
+        public string ExePath { get; set; }
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            SetTopLevel(true);
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            var res = StartResualt;
+            ProcessTools.MapleProcess.Start(ExePath, StartResualt.Address, StartResualt.Port);
+        }
     }
 }

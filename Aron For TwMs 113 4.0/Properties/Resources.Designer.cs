@@ -59,5 +59,23 @@ namespace Aron_For_TwMs_113_4.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查詢類似 https://aronhome.in/intro 的當地語系化字串。
+        /// </summary>
+        internal static string SiteRoot {
+            get {
+                return ResourceManager.GetString("SiteRoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 /api/Test 的當地語系化字串。
+        /// </summary>
+        internal static string StarterUrl {
+            get {
+                return ResourceManager.GetString("StarterUrl", resourceCulture);
+            }
+        }
     }
 }
