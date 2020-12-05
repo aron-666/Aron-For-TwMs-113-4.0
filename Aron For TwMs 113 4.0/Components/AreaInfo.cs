@@ -59,8 +59,23 @@ namespace Aron_For_TwMs_113_4.Components
 
                 while (true)
                 {
-                    ct["人物名"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["人物名"].Address, out var name);
-                    info.Name = name.ToString();
+                    lock (ct["人物名"].ScriptObject)
+                    {
+                        ct["人物名"].ScriptObject.IsRead = true;
+                        ct["人物名"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["人物名"].Address, out var name);
+                        info.Name = name.ToString();
+                        if (CkReName.Checked)
+                        {
+                            if(name.ToString() != TeReName.Text)
+                            {
+                                ct["人物名"].ScriptObject.IsRead = false;
+                                ct["人物名"].ScriptObject.WriteOfData = TeReName.Text + '\0';
+
+                                ct["人物名"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["人物名"].Address, out _);
+                            }
+                        }
+                    }
+                    
 
                     ct["system_time"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["system_time"].Address, out var time);
                     info.SystemTime = (int)time;
@@ -110,6 +125,8 @@ namespace Aron_For_TwMs_113_4.Components
             });
             t2.IsBackground = true;
             t2.Start();
+
+            toolTip1.SetToolTip(CkReName, "CS 啟用後換圖生效，用於拍攝不讓別人得知遊戲真實名子。");
         }
 
         private void t_Info_Tick(object sender, EventArgs e)
@@ -140,6 +157,11 @@ namespace Aron_For_TwMs_113_4.Components
             LMX.Text = $"{LMX.Tag} {info.MouseX}";
 
             LMY.Text = $"{LMY.Tag} {info.MouseY}";
+        }
+
+        private void CkReName_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

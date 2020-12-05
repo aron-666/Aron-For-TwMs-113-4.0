@@ -48,6 +48,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.LMP = new System.Windows.Forms.Label();
             this.LHP = new System.Windows.Forms.Label();
             this.t_Info = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,13 +99,14 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkReName.AutoSize = true;
             this.CkReName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.CkReName.ForeColor = System.Drawing.Color.White;
-            this.CkReName.Location = new System.Drawing.Point(30, 375);
+            this.CkReName.Location = new System.Drawing.Point(30, 377);
             this.CkReName.Margin = new System.Windows.Forms.Padding(4);
             this.CkReName.Name = "CkReName";
             this.CkReName.Size = new System.Drawing.Size(92, 24);
             this.CkReName.TabIndex = 126;
             this.CkReName.Text = "人物改名";
             this.CkReName.UseVisualStyleBackColor = true;
+            this.CkReName.CheckedChanged += new System.EventHandler(this.CkReName_CheckedChanged);
             // 
             // LName
             // 
@@ -303,5 +305,6 @@ namespace Aron_For_TwMs_113_4.Components
         private System.Windows.Forms.Label LMP;
         private System.Windows.Forms.Label LHP;
         private System.Windows.Forms.Timer t_Info;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
