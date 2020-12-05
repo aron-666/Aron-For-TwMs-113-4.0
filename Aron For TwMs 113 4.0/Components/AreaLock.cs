@@ -131,6 +131,7 @@ namespace Aron_For_TwMs_113_4.Components
                     _componentEvents.SetStatusText($"已鎖定 {item.Id}");
                     MessageBox.Show("鎖定成功!", "提醒", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     StringBuilder ClassName = new StringBuilder(256);
+                    MapleProcess.MsProc.Refresh();
                     GetClassName(MapleProcess.MsProc.MainWindowHandle, ClassName, ClassName.Capacity);
                     if (ClassName.ToString() == "StartUpDlgClass")
                     {
@@ -219,6 +220,7 @@ namespace Aron_For_TwMs_113_4.Components
                     if (MapleProcess.LoadFromPid(p.Id))
                     {
                         StringBuilder ClassName = new StringBuilder(256);
+                        MapleProcess.MsProc.Refresh();
                         GetClassName(MapleProcess.MsProc.MainWindowHandle, ClassName, ClassName.Capacity);
                         if (ClassName.ToString() == "StartUpDlgClass")
                         {
@@ -249,8 +251,10 @@ namespace Aron_For_TwMs_113_4.Components
                 if (MapleProcess.IsOpen)
                 {
                     StringBuilder ClassName = new StringBuilder(256);
+                    MapleProcess.MsProc.Refresh();
                     GetClassName(MapleProcess.MsProc.MainWindowHandle, ClassName, ClassName.Capacity);
-                    if (ClassName.ToString() == "StartUpDlgClass")
+                    var className = ClassName.ToString();
+                    if (className == "StartUpDlgClass")
                     {
                         if (CkStart.Checked)
                         {
@@ -472,7 +476,7 @@ namespace Aron_For_TwMs_113_4.Components
             return Id == -1;
         }
 
-        public static ProcessInfo Notting => new ProcessInfo() { Name = "Notting", Id = -1 };
+        public static ProcessInfo Notting => new ProcessInfo() { Name = "Nothing", Id = -1 };
     }
 
     public class MyWebClient : WebClient

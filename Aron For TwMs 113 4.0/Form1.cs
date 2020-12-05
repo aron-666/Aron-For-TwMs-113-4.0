@@ -1,4 +1,5 @@
 ﻿using Aron_For_TwMs_113_4.Components;
+using Newtonsoft.Json;
 using ProcessTools;
 using System;
 using System.Collections.Generic;
@@ -27,11 +28,31 @@ namespace Aron_For_TwMs_113_4
         public Form1()
         {
             InitializeComponent();
-            var s = File.ReadAllText("lib\\113new.CT");
-            ct = ProcessTools.CtTools.CtFactory.Load(s);
+
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
+                MyWebClient webClient = new MyWebClient();
+                var s = webClient.DownloadString("https://aronhome.in/intro/api/TwMs113AppInfo/GetAsmScriptA");
+                var obj = JsonConvert.DeserializeObject<Models.ApiResualt<string>>(s);
+                s = obj.data;
+                //s = File.ReadAllText("lib\\113new.CT");
+                s = MyAesCryptography.Decrypt("dvsaniewjqornkwomvriwhacucbeubvu", "sjideownvirpownr", s);
+
+
+                ct = ProcessTools.CtTools.CtFactory.Load(s);
+            }
+            catch
+            {
+                MessageBox.Show("無法連線到伺服器，請聯繫作者。", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+                return;
+            }
+            
+            RegistHotKeys();
             userControls.Add(new Components.AreaLock(this));
             userControls.Add(new Components.AreaKeys(this));
             userControls.Add(new Components.AreaInfo(this));
@@ -39,7 +60,6 @@ namespace Aron_For_TwMs_113_4
 
             panelBody.Controls.Add(userControls[0], 1, 0);
 
-            RegistHotKeys();
             btnStart.ToolTipText = "熱鍵：CTRL + ALT + J";
             btnStop.ToolTipText = "熱鍵：CTRL + ALT + K";
 
@@ -159,7 +179,15 @@ namespace Aron_For_TwMs_113_4
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HotKeys.ForEach(x => x.Dispose());
+            try
+            {
+                HotKeys.ForEach(x => x.Dispose());
+
+            }
+            catch
+            {
+
+            }
         }
     }
 }

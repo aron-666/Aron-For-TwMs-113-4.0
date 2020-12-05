@@ -87,22 +87,61 @@ namespace ProcessTools
             return CeAutoAsmLoad();
         }
 
+        public static bool ResetScript(string name, string script)
+        {
+            if (asmValue.ContainsKey(name))
+            {
+                lock (asmLock)
+                {
+                    int val = asmValue[name];
+                    CheatEngine.CheatEngineLibrary.iRemoveRecord.Invoke(val);
+                    CheatEngine.CheatEngineLibrary.iAddScript.Invoke(name, script);
+                    if(asmValue.Max(x => x.Value) != val)
+                    {
+                        asmValue[name] = asmId;
+                        asmId++;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
         public static bool CeAutoAsm(string name, String script, bool enable)
         {
             if (MsProc == null || MsProc.HasExited) return false;
 
             if (asmValue.ContainsKey(name))
             {
-                CheatEngine.CheatEngineLibrary.iActivateRecord.Invoke(asmValue[name], enable);
+                lock (asmLock)
+                {
+                    CheatEngine.CheatEngineLibrary.iActivateRecord.Invoke(asmValue[name], enable);
+                }
             }
             else
             {
                 lock (asmLock)
                 {
-                    asmValue.Add(name, asmId);
-                    CheatEngine.CheatEngineLibrary.iAddScript.Invoke(name, script);
-                    CheatEngine.CheatEngineLibrary.iActivateRecord.Invoke(asmId, enable);
-                    asmId++;
+                    int max = asmValue.Select(x => x.Value).DefaultIfEmpty(0).Max();
+                    int tempID = -1;
+                    for(int i = 0; i < max; i++)
+                    {
+                        if (!asmValue.ContainsValue(i))
+                            tempID = i;
+                        break;
+                    }
+                    if(tempID != -1)
+                    {
+                        asmValue.Add(name, tempID);
+                        CheatEngine.CheatEngineLibrary.iAddScript.Invoke(name, script);
+                        CheatEngine.CheatEngineLibrary.iActivateRecord.Invoke(tempID, enable);
+                    }
+                    else
+                    {
+                        asmValue.Add(name, asmId);
+                        CheatEngine.CheatEngineLibrary.iAddScript.Invoke(name, script);
+                        CheatEngine.CheatEngineLibrary.iActivateRecord.Invoke(asmId, enable);
+                        asmId++;
+                    }
                 }
                 
 
@@ -113,33 +152,67 @@ namespace ProcessTools
         }
         public static void Kill() 
         {
-            MsProc?.Kill();
+            try
+            {
+                MsProc?.Kill();
+
+            }
+            catch
+            {
+
+            }
             MsProc = null;
         }
 
-        private static bool CeAutoAsmLoad()
+
+        /// <summary>
+        /// 於程式開始時呼叫
+        /// </summary>
+        /// <returns></returns>
+        public static bool CeAutoAsmLoad()
         {
-            if (!IsLoad)
+
+            lock (asmLock)
             {
-                if (!Directory.Exists("lib"))
+                if (!IsLoad)
                 {
-                    Directory.CreateDirectory("lib");
+                    if (!Directory.Exists("lib"))
+                    {
+                        Directory.CreateDirectory("lib");
+                    }
+                    if (!File.Exists(Path.Combine("lib", "ce_lib32.dll")))
+                        File.WriteAllBytes(Path.Combine("lib", "ce_lib32.dll"), ProcessTools.Properties.Resources.ce_lib32);
+                    if (!File.Exists(Path.Combine("lib", "ce_lib64.dll")))
+                        File.WriteAllBytes(Path.Combine("lib", "ce_lib64.dll"), ProcessTools.Properties.Resources.ce_lib64);
+                    if (!CheatEngine.CheatEngineLibrary.loadEngine("lib")) return false;
+                    IsLoad = true;
                 }
-                if(!File.Exists(Path.Combine("lib", "ce_lib32.dll")))
-                    File.WriteAllBytes(Path.Combine("lib", "ce_lib32.dll"), ProcessTools.Properties.Resources.ce_lib32);
-                if(!File.Exists(Path.Combine("lib", "ce_lib64.dll")))
-                    File.WriteAllBytes(Path.Combine("lib", "ce_lib64.dll"), ProcessTools.Properties.Resources.ce_lib64);
-                if (!CheatEngine.CheatEngineLibrary.loadEngine("lib")) return false;
-                IsLoad = true;
+                else
+                {
+                    CheatEngine.CheatEngineLibrary.iResetTable.Invoke();
+                    asmValue.Clear();
+                    asmId = 0;
+                }
+                CheatEngine.CheatEngineLibrary.iOpenProcess.Invoke(Convert.ToString(MsProc.Id, 16));//Convert.ToString(MsProc.Handle.ToInt32(), 16).ToUpper().PadLeft(8, '0'));
+                if(MemoryControl == null) MemoryControl = new Memory.MemoryControl();
+                MemoryControl.LoadFromPid(MsProc.Id);
             }
-            else
-            {
-                CheatEngine.CheatEngineLibrary.iResetTable.Invoke();
-            }
-            CheatEngine.CheatEngineLibrary.iOpenProcess.Invoke(Convert.ToString(MsProc.Id, 16));//Convert.ToString(MsProc.Handle.ToInt32(), 16).ToUpper().PadLeft(8, '0'));
-            MemoryControl = new Memory.MemoryControl();
-            MemoryControl.LoadFromPid(MsProc.Id);
+            
             return true;
+        }
+
+        /// <summary>
+        /// 於程式結束時呼叫
+        /// </summary>
+        public static void Unload()
+        {
+            CheatEngine.CheatEngineLibrary.iResetTable.Invoke();
+            asmValue.Clear();
+            asmId = 0;
+            MsProc = null;
+            CheatEngine.CheatEngineLibrary.unloadEngine();
+
+
         }
     };
 }

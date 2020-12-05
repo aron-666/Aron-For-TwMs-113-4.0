@@ -161,7 +161,7 @@ namespace CheatEngine
 
         public static void unloadEngine()
         {
-            FreeLibrary(libInst);
+            if(libInst != IntPtr.Zero) FreeLibrary(libInst);
         }
 
     }

@@ -30,6 +30,14 @@ namespace Aron_For_TwMs_113_4.Components
         private void InitializeComponent()
         {
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.numMP = new System.Windows.Forms.NumericUpDown();
+            this.numHP = new System.Windows.Forms.NumericUpDown();
+            this.ckHPMP = new System.Windows.Forms.CheckBox();
+            this.numLuk = new System.Windows.Forms.NumericUpDown();
+            this.numInt = new System.Windows.Forms.NumericUpDown();
+            this.numDex = new System.Windows.Forms.NumericUpDown();
+            this.numStr = new System.Windows.Forms.NumericUpDown();
+            this.numRedDots = new System.Windows.Forms.NumericUpDown();
             this.Ck走掉 = new System.Windows.Forms.CheckBox();
             this.Ck控怪 = new System.Windows.Forms.CheckBox();
             this.Ck超撿 = new System.Windows.Forms.CheckBox();
@@ -39,9 +47,6 @@ namespace Aron_For_TwMs_113_4.Components
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.TeReMP = new System.Windows.Forms.TextBox();
-            this.TeReHP = new System.Windows.Forms.TextBox();
-            this.CkRe = new System.Windows.Forms.CheckBox();
             this.Ck滑鼠SS = new System.Windows.Forms.CheckBox();
             this.Ck箱子 = new System.Windows.Forms.CheckBox();
             this.Ck圖鑑 = new System.Windows.Forms.CheckBox();
@@ -54,16 +59,11 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck左右 = new System.Windows.Forms.CheckBox();
             this.Ck牆值左右 = new System.Windows.Forms.CheckBox();
             this.Ck寵物全圖吸 = new System.Windows.Forms.CheckBox();
-            this.TeLuk = new System.Windows.Forms.TextBox();
-            this.TeInt = new System.Windows.Forms.TextBox();
-            this.TeDex = new System.Windows.Forms.TextBox();
-            this.TeStr = new System.Windows.Forms.TextBox();
             this.Ck改能力 = new System.Windows.Forms.CheckBox();
             this.CkMouCS = new System.Windows.Forms.CheckBox();
             this.Ck全圖吸怪 = new System.Windows.Forms.CheckBox();
             this.Ck全圖吸物 = new System.Windows.Forms.CheckBox();
             this.Ck全圖打 = new System.Windows.Forms.CheckBox();
-            this.TeRed = new System.Windows.Forms.TextBox();
             this.CkRed = new System.Windows.Forms.CheckBox();
             this.Ck無延遲 = new System.Windows.Forms.CheckBox();
             this.Ck停止呼吸 = new System.Windows.Forms.CheckBox();
@@ -79,12 +79,27 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkMP無限 = new System.Windows.Forms.CheckBox();
             this.Ck爆擊100 = new System.Windows.Forms.CheckBox();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLuk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRedDots)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox6.Controls.Add(this.numMP);
+            this.groupBox6.Controls.Add(this.numHP);
+            this.groupBox6.Controls.Add(this.ckHPMP);
+            this.groupBox6.Controls.Add(this.numLuk);
+            this.groupBox6.Controls.Add(this.numInt);
+            this.groupBox6.Controls.Add(this.numDex);
+            this.groupBox6.Controls.Add(this.numStr);
+            this.groupBox6.Controls.Add(this.numRedDots);
             this.groupBox6.Controls.Add(this.Ck走掉);
             this.groupBox6.Controls.Add(this.Ck控怪);
             this.groupBox6.Controls.Add(this.Ck超撿);
@@ -94,9 +109,6 @@ namespace Aron_For_TwMs_113_4.Components
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label10);
-            this.groupBox6.Controls.Add(this.TeReMP);
-            this.groupBox6.Controls.Add(this.TeReHP);
-            this.groupBox6.Controls.Add(this.CkRe);
             this.groupBox6.Controls.Add(this.Ck滑鼠SS);
             this.groupBox6.Controls.Add(this.Ck箱子);
             this.groupBox6.Controls.Add(this.Ck圖鑑);
@@ -109,16 +121,11 @@ namespace Aron_For_TwMs_113_4.Components
             this.groupBox6.Controls.Add(this.Ck左右);
             this.groupBox6.Controls.Add(this.Ck牆值左右);
             this.groupBox6.Controls.Add(this.Ck寵物全圖吸);
-            this.groupBox6.Controls.Add(this.TeLuk);
-            this.groupBox6.Controls.Add(this.TeInt);
-            this.groupBox6.Controls.Add(this.TeDex);
-            this.groupBox6.Controls.Add(this.TeStr);
             this.groupBox6.Controls.Add(this.Ck改能力);
             this.groupBox6.Controls.Add(this.CkMouCS);
             this.groupBox6.Controls.Add(this.Ck全圖吸怪);
             this.groupBox6.Controls.Add(this.Ck全圖吸物);
             this.groupBox6.Controls.Add(this.Ck全圖打);
-            this.groupBox6.Controls.Add(this.TeRed);
             this.groupBox6.Controls.Add(this.CkRed);
             this.groupBox6.Controls.Add(this.Ck無延遲);
             this.groupBox6.Controls.Add(this.Ck停止呼吸);
@@ -126,21 +133,159 @@ namespace Aron_For_TwMs_113_4.Components
             this.groupBox6.Controls.Add(this.Ck無敵);
             this.groupBox6.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(3, 96);
+            this.groupBox6.Location = new System.Drawing.Point(4, 96);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(451, 351);
+            this.groupBox6.Size = new System.Drawing.Size(448, 345);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "進階功能";
+            // 
+            // numMP
+            // 
+            this.numMP.Enabled = false;
+            this.numMP.Location = new System.Drawing.Point(184, 140);
+            this.numMP.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMP.Name = "numMP";
+            this.numMP.Size = new System.Drawing.Size(47, 23);
+            this.numMP.TabIndex = 134;
+            this.numMP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numMP.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numHP
+            // 
+            this.numHP.Enabled = false;
+            this.numHP.Location = new System.Drawing.Point(88, 140);
+            this.numHP.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numHP.Name = "numHP";
+            this.numHP.Size = new System.Drawing.Size(47, 23);
+            this.numHP.TabIndex = 133;
+            this.numHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numHP.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // ckHPMP
+            // 
+            this.ckHPMP.AutoSize = true;
+            this.ckHPMP.Enabled = false;
+            this.ckHPMP.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ckHPMP.ForeColor = System.Drawing.Color.White;
+            this.ckHPMP.Location = new System.Drawing.Point(18, 149);
+            this.ckHPMP.Margin = new System.Windows.Forms.Padding(4);
+            this.ckHPMP.Name = "ckHPMP";
+            this.ckHPMP.Size = new System.Drawing.Size(237, 19);
+            this.ckHPMP.TabIndex = 132;
+            this.ckHPMP.Tag = "";
+            this.ckHPMP.Text = "恢復HP             倍, MP             倍";
+            this.ckHPMP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ckHPMP.UseVisualStyleBackColor = true;
+            this.ckHPMP.CheckedChanged += new System.EventHandler(this.ckHPMP_CheckedChanged);
+            // 
+            // numLuk
+            // 
+            this.numLuk.Location = new System.Drawing.Point(375, 304);
+            this.numLuk.Maximum = new decimal(new int[] {
+            32767,
+            0,
+            0,
+            0});
+            this.numLuk.Name = "numLuk";
+            this.numLuk.Size = new System.Drawing.Size(59, 23);
+            this.numLuk.TabIndex = 131;
+            this.numLuk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numLuk.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numLuk.ValueChanged += new System.EventHandler(this.ap_ValueChange);
+            // 
+            // numInt
+            // 
+            this.numInt.Location = new System.Drawing.Point(289, 304);
+            this.numInt.Maximum = new decimal(new int[] {
+            32767,
+            0,
+            0,
+            0});
+            this.numInt.Name = "numInt";
+            this.numInt.Size = new System.Drawing.Size(59, 23);
+            this.numInt.TabIndex = 130;
+            this.numInt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numInt.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numInt.ValueChanged += new System.EventHandler(this.ap_ValueChange);
+            // 
+            // numDex
+            // 
+            this.numDex.Location = new System.Drawing.Point(201, 304);
+            this.numDex.Maximum = new decimal(new int[] {
+            32767,
+            0,
+            0,
+            0});
+            this.numDex.Name = "numDex";
+            this.numDex.Size = new System.Drawing.Size(59, 23);
+            this.numDex.TabIndex = 129;
+            this.numDex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numDex.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numDex.ValueChanged += new System.EventHandler(this.ap_ValueChange);
+            // 
+            // numStr
+            // 
+            this.numStr.Location = new System.Drawing.Point(113, 304);
+            this.numStr.Maximum = new decimal(new int[] {
+            32767,
+            0,
+            0,
+            0});
+            this.numStr.Name = "numStr";
+            this.numStr.Size = new System.Drawing.Size(59, 23);
+            this.numStr.TabIndex = 128;
+            this.numStr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numStr.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numStr.ValueChanged += new System.EventHandler(this.ap_ValueChange);
+            // 
+            // numRedDots
+            // 
+            this.numRedDots.Location = new System.Drawing.Point(358, 58);
+            this.numRedDots.Name = "numRedDots";
+            this.numRedDots.Size = new System.Drawing.Size(42, 23);
+            this.numRedDots.TabIndex = 8;
             // 
             // Ck走掉
             // 
             this.Ck走掉.AutoSize = true;
             this.Ck走掉.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck走掉.ForeColor = System.Drawing.Color.White;
-            this.Ck走掉.Location = new System.Drawing.Point(228, 272);
+            this.Ck走掉.Location = new System.Drawing.Point(232, 231);
             this.Ck走掉.Margin = new System.Windows.Forms.Padding(4);
             this.Ck走掉.Name = "Ck走掉";
             this.Ck走掉.Size = new System.Drawing.Size(86, 19);
@@ -154,7 +299,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck控怪.AutoSize = true;
             this.Ck控怪.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck控怪.ForeColor = System.Drawing.Color.White;
-            this.Ck控怪.Location = new System.Drawing.Point(117, 272);
+            this.Ck控怪.Location = new System.Drawing.Point(128, 231);
             this.Ck控怪.Margin = new System.Windows.Forms.Padding(4);
             this.Ck控怪.Name = "Ck控怪";
             this.Ck控怪.Size = new System.Drawing.Size(86, 19);
@@ -182,7 +327,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck定怪.AutoSize = true;
             this.Ck定怪.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck定怪.ForeColor = System.Drawing.Color.White;
-            this.Ck定怪.Location = new System.Drawing.Point(342, 272);
+            this.Ck定怪.Location = new System.Drawing.Point(334, 231);
             this.Ck定怪.Margin = new System.Windows.Forms.Padding(4);
             this.Ck定怪.Name = "Ck定怪";
             this.Ck定怪.Size = new System.Drawing.Size(56, 19);
@@ -193,29 +338,32 @@ namespace Aron_For_TwMs_113_4.Components
             // 
             // Co生怪
             // 
+            this.Co生怪.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Co生怪.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Co生怪.FormattingEnabled = true;
             this.Co生怪.Items.AddRange(new object[] {
             "定點",
             "身旁"});
-            this.Co生怪.Location = new System.Drawing.Point(342, 139);
+            this.Co生怪.Location = new System.Drawing.Point(350, 140);
             this.Co生怪.Margin = new System.Windows.Forms.Padding(4);
             this.Co生怪.Name = "Co生怪";
             this.Co生怪.Size = new System.Drawing.Size(67, 23);
             this.Co生怪.TabIndex = 119;
+            this.Co生怪.SelectedIndexChanged += new System.EventHandler(this.Co生怪_SelectedIndexChanged);
             // 
             // Ck定點
             // 
             this.Ck定點.AutoSize = true;
             this.Ck定點.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck定點.ForeColor = System.Drawing.Color.White;
-            this.Ck定點.Location = new System.Drawing.Point(259, 148);
+            this.Ck定點.Location = new System.Drawing.Point(268, 149);
             this.Ck定點.Margin = new System.Windows.Forms.Padding(4);
             this.Ck定點.Name = "Ck定點";
             this.Ck定點.Size = new System.Drawing.Size(158, 19);
             this.Ck定點.TabIndex = 118;
             this.Ck定點.Text = "定點生怪                  ";
             this.Ck定點.UseVisualStyleBackColor = true;
+            this.Ck定點.CheckedChanged += new System.EventHandler(this.Ck定點_CheckedChanged);
             // 
             // label8
             // 
@@ -232,7 +380,7 @@ namespace Aron_For_TwMs_113_4.Components
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(225, 210);
+            this.label9.Location = new System.Drawing.Point(231, 210);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 12);
@@ -250,52 +398,12 @@ namespace Aron_For_TwMs_113_4.Components
             this.label10.TabIndex = 115;
             this.label10.Text = "CTRL+D";
             // 
-            // TeReMP
-            // 
-            this.TeReMP.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeReMP.Location = new System.Drawing.Point(177, 141);
-            this.TeReMP.Margin = new System.Windows.Forms.Padding(4);
-            this.TeReMP.MaxLength = 3;
-            this.TeReMP.Multiline = true;
-            this.TeReMP.Name = "TeReMP";
-            this.TeReMP.Size = new System.Drawing.Size(46, 22);
-            this.TeReMP.TabIndex = 114;
-            this.TeReMP.Text = "1";
-            this.TeReMP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TeReHP
-            // 
-            this.TeReHP.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeReHP.Location = new System.Drawing.Point(90, 141);
-            this.TeReHP.Margin = new System.Windows.Forms.Padding(4);
-            this.TeReHP.MaxLength = 3;
-            this.TeReHP.Multiline = true;
-            this.TeReHP.Name = "TeReHP";
-            this.TeReHP.Size = new System.Drawing.Size(46, 22);
-            this.TeReHP.TabIndex = 113;
-            this.TeReHP.Text = "1";
-            this.TeReHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // CkRe
-            // 
-            this.CkRe.AutoSize = true;
-            this.CkRe.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.CkRe.ForeColor = System.Drawing.Color.White;
-            this.CkRe.Location = new System.Drawing.Point(18, 149);
-            this.CkRe.Margin = new System.Windows.Forms.Padding(4);
-            this.CkRe.Name = "CkRe";
-            this.CkRe.Size = new System.Drawing.Size(229, 19);
-            this.CkRe.TabIndex = 112;
-            this.CkRe.Tag = "";
-            this.CkRe.Text = "恢復 HP            倍 MP            倍";
-            this.CkRe.UseVisualStyleBackColor = true;
-            // 
             // Ck滑鼠SS
             // 
             this.Ck滑鼠SS.AutoSize = true;
             this.Ck滑鼠SS.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck滑鼠SS.ForeColor = System.Drawing.Color.White;
-            this.Ck滑鼠SS.Location = new System.Drawing.Point(341, 190);
+            this.Ck滑鼠SS.Location = new System.Drawing.Point(336, 190);
             this.Ck滑鼠SS.Margin = new System.Windows.Forms.Padding(4);
             this.Ck滑鼠SS.Name = "Ck滑鼠SS";
             this.Ck滑鼠SS.Size = new System.Drawing.Size(72, 19);
@@ -309,7 +417,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck箱子.AutoSize = true;
             this.Ck箱子.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck箱子.ForeColor = System.Drawing.Color.White;
-            this.Ck箱子.Location = new System.Drawing.Point(227, 231);
+            this.Ck箱子.Location = new System.Drawing.Point(333, 272);
             this.Ck箱子.Margin = new System.Windows.Forms.Padding(4);
             this.Ck箱子.Name = "Ck箱子";
             this.Ck箱子.Size = new System.Drawing.Size(101, 19);
@@ -337,7 +445,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck不顯傷害.AutoSize = true;
             this.Ck不顯傷害.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck不顯傷害.ForeColor = System.Drawing.Color.White;
-            this.Ck不顯傷害.Location = new System.Drawing.Point(121, 231);
+            this.Ck不顯傷害.Location = new System.Drawing.Point(232, 272);
             this.Ck不顯傷害.Margin = new System.Windows.Forms.Padding(4);
             this.Ck不顯傷害.Name = "Ck不顯傷害";
             this.Ck不顯傷害.Size = new System.Drawing.Size(86, 19);
@@ -351,7 +459,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck物品定位.AutoSize = true;
             this.Ck物品定位.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck物品定位.ForeColor = System.Drawing.Color.White;
-            this.Ck物品定位.Location = new System.Drawing.Point(342, 231);
+            this.Ck物品定位.Location = new System.Drawing.Point(128, 272);
             this.Ck物品定位.Margin = new System.Windows.Forms.Padding(4);
             this.Ck物品定位.Name = "Ck物品定位";
             this.Ck物品定位.Size = new System.Drawing.Size(86, 19);
@@ -365,7 +473,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck怪物不退.AutoSize = true;
             this.Ck怪物不退.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck怪物不退.ForeColor = System.Drawing.Color.White;
-            this.Ck怪物不退.Location = new System.Drawing.Point(144, 26);
+            this.Ck怪物不退.Location = new System.Drawing.Point(146, 26);
             this.Ck怪物不退.Margin = new System.Windows.Forms.Padding(4);
             this.Ck怪物不退.Name = "Ck怪物不退";
             this.Ck怪物不退.Size = new System.Drawing.Size(86, 19);
@@ -379,7 +487,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck快速生怪.AutoSize = true;
             this.Ck快速生怪.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck快速生怪.ForeColor = System.Drawing.Color.White;
-            this.Ck快速生怪.Location = new System.Drawing.Point(234, 26);
+            this.Ck快速生怪.Location = new System.Drawing.Point(240, 26);
             this.Ck快速生怪.Margin = new System.Windows.Forms.Padding(4);
             this.Ck快速生怪.Name = "Ck快速生怪";
             this.Ck快速生怪.Size = new System.Drawing.Size(86, 19);
@@ -407,7 +515,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck笨怪.AutoSize = true;
             this.Ck笨怪.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck笨怪.ForeColor = System.Drawing.Color.White;
-            this.Ck笨怪.Location = new System.Drawing.Point(80, 26);
+            this.Ck笨怪.Location = new System.Drawing.Point(82, 26);
             this.Ck笨怪.Margin = new System.Windows.Forms.Padding(4);
             this.Ck笨怪.Name = "Ck笨怪";
             this.Ck笨怪.Size = new System.Drawing.Size(56, 19);
@@ -421,7 +529,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck左右.AutoSize = true;
             this.Ck左右.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Ck左右.ForeColor = System.Drawing.Color.White;
-            this.Ck左右.Location = new System.Drawing.Point(117, 190);
+            this.Ck左右.Location = new System.Drawing.Point(128, 190);
             this.Ck左右.Margin = new System.Windows.Forms.Padding(4);
             this.Ck左右.Name = "Ck左右";
             this.Ck左右.Size = new System.Drawing.Size(86, 19);
@@ -459,58 +567,6 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck寵物全圖吸.Text = "寵物全圖吸物";
             this.Ck寵物全圖吸.UseVisualStyleBackColor = true;
             // 
-            // TeLuk
-            // 
-            this.TeLuk.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeLuk.Location = new System.Drawing.Point(376, 304);
-            this.TeLuk.Margin = new System.Windows.Forms.Padding(4);
-            this.TeLuk.MaxLength = 5;
-            this.TeLuk.Multiline = true;
-            this.TeLuk.Name = "TeLuk";
-            this.TeLuk.Size = new System.Drawing.Size(48, 22);
-            this.TeLuk.TabIndex = 19;
-            this.TeLuk.Text = "50";
-            this.TeLuk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TeInt
-            // 
-            this.TeInt.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeInt.Location = new System.Drawing.Point(288, 304);
-            this.TeInt.Margin = new System.Windows.Forms.Padding(4);
-            this.TeInt.MaxLength = 5;
-            this.TeInt.Multiline = true;
-            this.TeInt.Name = "TeInt";
-            this.TeInt.Size = new System.Drawing.Size(47, 22);
-            this.TeInt.TabIndex = 18;
-            this.TeInt.Text = "50";
-            this.TeInt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TeDex
-            // 
-            this.TeDex.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeDex.Location = new System.Drawing.Point(201, 304);
-            this.TeDex.Margin = new System.Windows.Forms.Padding(4);
-            this.TeDex.MaxLength = 5;
-            this.TeDex.Multiline = true;
-            this.TeDex.Name = "TeDex";
-            this.TeDex.Size = new System.Drawing.Size(48, 22);
-            this.TeDex.TabIndex = 17;
-            this.TeDex.Text = "50";
-            this.TeDex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TeStr
-            // 
-            this.TeStr.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeStr.Location = new System.Drawing.Point(113, 304);
-            this.TeStr.Margin = new System.Windows.Forms.Padding(4);
-            this.TeStr.MaxLength = 5;
-            this.TeStr.Multiline = true;
-            this.TeStr.Name = "TeStr";
-            this.TeStr.Size = new System.Drawing.Size(48, 22);
-            this.TeStr.TabIndex = 16;
-            this.TeStr.Text = "50";
-            this.TeStr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Ck改能力
             // 
             this.Ck改能力.AutoSize = true;
@@ -523,13 +579,14 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck改能力.TabIndex = 15;
             this.Ck改能力.Text = "改能力  力:                 敏:                 智:                 幸:                ";
             this.Ck改能力.UseVisualStyleBackColor = true;
+            this.Ck改能力.CheckedChanged += new System.EventHandler(this.Ck改能力_CheckedChanged);
             // 
             // CkMouCS
             // 
             this.CkMouCS.AutoSize = true;
             this.CkMouCS.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.CkMouCS.ForeColor = System.Drawing.Color.White;
-            this.CkMouCS.Location = new System.Drawing.Point(228, 190);
+            this.CkMouCS.Location = new System.Drawing.Point(232, 187);
             this.CkMouCS.Margin = new System.Windows.Forms.Padding(4);
             this.CkMouCS.Name = "CkMouCS";
             this.CkMouCS.Size = new System.Drawing.Size(73, 19);
@@ -580,19 +637,6 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck全圖打.Text = "全圖打";
             this.Ck全圖打.UseVisualStyleBackColor = true;
             // 
-            // TeRed
-            // 
-            this.TeRed.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TeRed.Location = new System.Drawing.Point(358, 59);
-            this.TeRed.Margin = new System.Windows.Forms.Padding(4);
-            this.TeRed.MaxLength = 3;
-            this.TeRed.Multiline = true;
-            this.TeRed.Name = "TeRed";
-            this.TeRed.Size = new System.Drawing.Size(39, 22);
-            this.TeRed.TabIndex = 10;
-            this.TeRed.Text = "0";
-            this.TeRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // CkRed
             // 
             this.CkRed.AutoSize = true;
@@ -605,6 +649,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkRed.TabIndex = 9;
             this.CkRed.Text = "紅點 >            斷線";
             this.CkRed.UseVisualStyleBackColor = true;
+            this.CkRed.CheckedChanged += new System.EventHandler(this.CkRed_CheckedChanged);
             // 
             // Ck無延遲
             // 
@@ -618,6 +663,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck無延遲.TabIndex = 8;
             this.Ck無延遲.Text = "新無延遲";
             this.Ck無延遲.UseVisualStyleBackColor = true;
+            this.Ck無延遲.CheckedChanged += new System.EventHandler(this.ckWritePoint_CheckChange);
             // 
             // Ck停止呼吸
             // 
@@ -631,6 +677,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck停止呼吸.TabIndex = 7;
             this.Ck停止呼吸.Text = "停止呼吸";
             this.Ck停止呼吸.UseVisualStyleBackColor = true;
+            this.Ck停止呼吸.CheckedChanged += new System.EventHandler(this.ckWritePoint_CheckChange);
             // 
             // Ck攻擊不停
             // 
@@ -644,6 +691,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.Ck攻擊不停.TabIndex = 6;
             this.Ck攻擊不停.Text = "攻擊不停";
             this.Ck攻擊不停.UseVisualStyleBackColor = true;
+            this.Ck攻擊不停.CheckedChanged += new System.EventHandler(this.ckWritePoint_CheckChange);
             // 
             // Ck無敵
             // 
@@ -671,11 +719,11 @@ namespace Aron_For_TwMs_113_4.Components
             this.groupBox5.Controls.Add(this.Ck爆擊100);
             this.groupBox5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(3, 4);
+            this.groupBox5.Location = new System.Drawing.Point(4, 4);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(451, 90);
+            this.groupBox5.Size = new System.Drawing.Size(448, 90);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "動態數據";
@@ -798,6 +846,13 @@ namespace Aron_For_TwMs_113_4.Components
             this.Load += new System.EventHandler(this.AreaControl_Load);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLuk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRedDots)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -816,9 +871,6 @@ namespace Aron_For_TwMs_113_4.Components
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.Label label9;
         internal System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox TeReMP;
-        private System.Windows.Forms.TextBox TeReHP;
-        private System.Windows.Forms.CheckBox CkRe;
         private System.Windows.Forms.CheckBox Ck滑鼠SS;
         internal System.Windows.Forms.CheckBox Ck箱子;
         internal System.Windows.Forms.CheckBox Ck圖鑑;
@@ -831,16 +883,11 @@ namespace Aron_For_TwMs_113_4.Components
         internal System.Windows.Forms.CheckBox Ck左右;
         internal System.Windows.Forms.CheckBox Ck牆值左右;
         private System.Windows.Forms.CheckBox Ck寵物全圖吸;
-        private System.Windows.Forms.TextBox TeLuk;
-        private System.Windows.Forms.TextBox TeInt;
-        private System.Windows.Forms.TextBox TeDex;
-        private System.Windows.Forms.TextBox TeStr;
         private System.Windows.Forms.CheckBox Ck改能力;
         private System.Windows.Forms.CheckBox CkMouCS;
         private System.Windows.Forms.CheckBox Ck全圖吸怪;
         private System.Windows.Forms.CheckBox Ck全圖吸物;
         private System.Windows.Forms.CheckBox Ck全圖打;
-        private System.Windows.Forms.TextBox TeRed;
         private System.Windows.Forms.CheckBox CkRed;
         private System.Windows.Forms.CheckBox Ck無延遲;
         private System.Windows.Forms.CheckBox Ck停止呼吸;
@@ -855,5 +902,13 @@ namespace Aron_For_TwMs_113_4.Components
         private System.Windows.Forms.CheckBox Ck速激;
         private System.Windows.Forms.CheckBox CkMP無限;
         private System.Windows.Forms.CheckBox Ck爆擊100;
+        private System.Windows.Forms.NumericUpDown numRedDots;
+        private System.Windows.Forms.NumericUpDown numLuk;
+        private System.Windows.Forms.NumericUpDown numInt;
+        private System.Windows.Forms.NumericUpDown numDex;
+        private System.Windows.Forms.NumericUpDown numStr;
+        private System.Windows.Forms.NumericUpDown numMP;
+        private System.Windows.Forms.NumericUpDown numHP;
+        internal System.Windows.Forms.CheckBox ckHPMP;
     }
 }

@@ -77,11 +77,21 @@ namespace Aron_For_TwMs_113_4.Components
                     ct["怪物數量"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["怪物數量"].Address, out var mobs);
                     info.Mobs = (int)mobs;
 
-                    ct["攻擊不停"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["攻擊不停"].Address, out var att);
-                    info.AttCount = (int)att;
+                    lock (ct["攻擊不停"].ScriptObject)
+                    {
+                        ct["攻擊不停"].ScriptObject.IsRead = true;
+                        ct["攻擊不停"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["攻擊不停"].Address, out var att);
+                        info.AttCount = (int)att;
+                    }
 
-                    ct["停止呼吸"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["停止呼吸"].Address, out var br);
-                    info.Breathe = (int)br;
+
+                    lock (ct["停止呼吸"].ScriptObject)
+                    {
+                        ct["停止呼吸"].ScriptObject.IsRead = true;
+                        ct["停止呼吸"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["停止呼吸"].Address, out var br);
+                        info.Breathe = (int)br;
+                    }
+                    
 
                     ct["X"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["X"].Address, out var x);
                     info.playerX = (int)x;
@@ -94,7 +104,7 @@ namespace Aron_For_TwMs_113_4.Components
 
                     ct["滑鼠Y"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["滑鼠Y"].Address, out var my);
                     info.MouseY = (int)my;
-                    Thread.Sleep(50);
+                    Thread.Sleep(10);
                 }
 
             });

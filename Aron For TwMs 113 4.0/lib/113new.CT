@@ -893,64 +893,55 @@ je 009D0402
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-        Alloc(StatChange,1024)
-        Alloc(_str,4)
-        Alloc(_dex,4)
-        Alloc(_int,4)
-        Alloc(_luk,4)
-        Alloc(_hp,4)
-        Alloc(_maxhp,4)
-        Alloc(_mp,4)
-        Alloc(_maxmp,4)
-        _str:
-        DD #{0}
-        _dex:
-        DD #{1}
-        _int:
-        DD #{2}
-        _luk:
-        DD #{3}
-        _hp:
-        DD #{4}
-        _maxhp:
-        DD #{5}
-        _mp:
-        DD #{6}
-        _maxmp:
-        DD #{7}
-        StatChange:
-        mov edi,[ebp+08]
-        mov esi,ecx
-        push eax
-        mov eax,[_str]
-        lea edx,[esi+43]
-        mov ecx,eax
-        call 004F59B2
-        mov [esi+47],eax
-        mov eax,[_dex]
-        lea edx,[esi+4B]
-        mov ecx,eax
-        call 004F59B2
-        mov [esi+4F],eax
-        mov eax,[_int]
-        lea edx,[esi+53]
-        mov ecx,eax
-        call 004F59B2
-        mov [esi+57],eax
-        mov eax,[_luk]
-        lea edx,[esi+5B]
-        mov ecx,eax
-        call 004F59B2
-        mov [esi+5F],eax
-        pop eax
-        jmp 004F08B9
-        004F08B4:
-        jmp StatChange
-        [DISABLE]
-        004F08B4:
-        mov edi,[ebp+08]
-        mov esi,ecx
-      
+Alloc(StatChange,1024)
+Alloc(_str,4)
+Alloc(_dex,4)
+Alloc(_int,4)
+Alloc(_luk,4)
+Alloc(_hp,4)
+Alloc(_maxhp,4)
+Alloc(_mp,4)
+Alloc(_maxmp,4)
+_str:
+DD {0:x}
+_dex:
+DD {1:x}
+_int:
+DD {2:x}
+_luk:
+DD {3:x}
+StatChange:
+mov edi,[ebp+08]
+mov esi,ecx
+push eax
+mov eax,[_str]
+lea edx,[esi+43]
+mov ecx,eax
+call 004F59B2
+mov [esi+47],eax
+mov eax,[_dex]
+lea edx,[esi+4B]
+mov ecx,eax
+call 004F59B2
+mov [esi+4F],eax
+mov eax,[_int]
+lea edx,[esi+53]
+mov ecx,eax
+call 004F59B2
+mov [esi+57],eax
+mov eax,[_luk]
+lea edx,[esi+5B]
+mov ecx,eax
+call 004F59B2
+mov [esi+5F],eax
+pop eax
+jmp 004F08B9
+004F08B4:
+jmp StatChange
+[DISABLE]
+004F08B4:
+mov edi,[ebp+08]
+mov esi,ecx
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
@@ -1336,217 +1327,93 @@ DeAlloc(AutoLRICS)
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[enable]
-  alloc(HookFR,1024)
-
-  Registersymbol(HookFR)
-
-  label(HookRet)
-
-  label(HPHandler)
-
-  label(MPHandler)
-
-
-
-  label(FastRecoverHP)
-
-  label(DoNormalHP)
-
-  label(HPCheck)
-
-  alloc(HPCounter,4)
-
-  alloc(SetHPCounter,4)
-
-  alloc(RecoverTime,4)
-
-  Registersymbol(SetHPCounter)
-
-
-
-  label(FastRecoverMP)
-
-  label(DoNormalMP)
-
-  label(MPCheck)
-
-  alloc(MPCounter,4)
-
-  alloc(SetMPCounter,4)
-
-  Registersymbol(SetMPCounter)
-
-
-
+alloc(HookFR,1024)
+Registersymbol(HookFR)
+label(HookRet)
+label(HPHandler)
+label(MPHandler)
+label(FastRecoverHP)
+label(DoNormalHP)
+label(HPCheck)
+alloc(HPCounter,4)
+alloc(SetHPCounter,4)
+alloc(RecoverTime,4)
+Registersymbol(SetHPCounter)
+label(FastRecoverMP)
+label(DoNormalMP)
+label(MPCheck)
+alloc(MPCounter,4)
+alloc(SetMPCounter,4)
+Registersymbol(SetMPCounter)
 HookFR:
-
-  cmp [esp],00A1F484
-
-  je HPHandler
-
-  cmp [esp],00A1F5F2
-
-  je MPHandler
-
+cmp [esp],00A1F484
+je HPHandler
+cmp [esp],00A1F5F2
+je MPHandler
 HookRet:
-
-  push ebp
-
-  mov ebp,esp
-
-  sub esp,0c
-
-  jmp 0042A559
-
+push ebp
+mov ebp,esp
+sub esp,0c
+jmp 0042A559
 HPHandler:
-
-  mov [esp],FastRecoverHP
-
-  jmp HookRet
-
+mov [esp],FastRecoverHP
+jmp HookRet
 MPHandler:
-
-  mov [esp],FastRecoverMP
-
-  jmp HookRet
-
-
-
+mov [esp],FastRecoverMP
+jmp HookRet
 FastRecoverHP:
-
-  push eax
-
-  mov eax,[ebp-1c]
-
-  mov [RecoverTime],eax
-
-  pop eax
-
-
-
-  cmp [HPCounter],0
-
-  je HPCheck
-
-  dec [HPCounter]
-
-  cmp ebx,1
-
-  jmp 00A1F487
-
-
-
+push eax
+mov eax,[ebp-1c]
+mov [RecoverTime],eax
+pop eax
+cmp [HPCounter],0
+je HPCheck
+dec [HPCounter]
+cmp ebx,1
+jmp 00A1F487
 HPCheck:
-
-  sub [RecoverTime],0A
-
-  cmp ebx,[RecoverTime]
-
-  jna DoNormalHP
-
-
-
-  push eax
-
-  mov eax,[SetHPCounter]
-
-  dec eax
-
-  mov [HPCounter],eax
-
-  pop eax
-
-
-
+sub [RecoverTime],0A
+cmp ebx,[RecoverTime]
+jna DoNormalHP
+push eax
+mov eax,[SetHPCounter]
+dec eax
+mov [HPCounter],eax
+pop eax
 DoNormalHP:
-
-  cmp ebx,[ebp-1c]
-
-  jmp 00A1F487
-
-
-
-
-
+cmp ebx,[ebp-1c]
+jmp 00A1F487
 FastRecoverMP:
-
-  cmp [MPCounter],0
-
-  je MPCheck
-
-  dec [MPCounter]
-
-  cmp ebx,1
-
-  jmp 00A1F5F8
-
-
-
+cmp [MPCounter],0
+je MPCheck
+dec [MPCounter]
+cmp ebx,1
+jmp 00A1F5F8
 MPCheck:
-
-  cmp ebx,00002134
-
-  jna DoNormalMP
-
-  push eax
-
-  mov eax,[SetMPCounter]
-
-  dec eax
-
-  mov [MPCounter],eax
-
-  pop eax
-
-
-
+cmp ebx,00002134
+jna DoNormalMP
+push eax
+mov eax,[SetMPCounter]
+dec eax
+mov [MPCounter],eax
+pop eax
 DoNormalMP:
-
-  cmp ebx,00002134
-
-  jmp 00A1F5F8
-
-
-
+cmp ebx,00002134
+jmp 00A1F5F8
 SetHPCounter:
-
-  dd #{0}
-
+dd {0:x}
 SetMPCounter:
-
-  dd #{1}
-
-
-
-
-
+dd {1:x}
 [Disable]
-
-
-
-
-
-  unRegistersymbol(HookFR)
-
-  dealloc(HookFR)
-
-
-
-  dealloc(HPCounter)
-
-  dealloc(SetHPCounter)
-
-  dealloc(RecoverTime)
-
-  unRegistersymbol(SetHPCounter)
-
-
-
-  dealloc(MPCounter)
-
-  dealloc(SetMPCounter)
-
-  unRegistersymbol(SetMPCounter)
+unRegistersymbol(HookFR)
+dealloc(HookFR)
+dealloc(HPCounter)
+dealloc(SetHPCounter)
+dealloc(RecoverTime)
+unRegistersymbol(SetHPCounter)
+dealloc(MPCounter)
+dealloc(SetMPCounter)
+unRegistersymbol(SetMPCounter)
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
@@ -1605,8 +1472,21 @@ DD 009D7801
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
+      <ID>132</ID>
+      <Description>"無限洗頻"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+004933C5:
+jmp 004933E4
+[DISABLE]
+004933C5:
+jae 004933E4
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
       <ID>101</ID>
-      <Description>"無延遲"</Description>
+      <Description>"新無延遲"</Description>
       <VariableType>4 Bytes</VariableType>
       <Address>00bf16e8</Address>
       <Offsets>
@@ -1758,6 +1638,8 @@ DD 009D7801
       <Address>063A0028</Address>
     </SymbolEntry>
   </UserdefinedSymbols>
+  <Comments>Info about this table:
+</Comments>
   <DisassemblerComments>
     <DisassemblerComment>
       <Address>"EHSvc.dll"+3434D0</Address>
