@@ -199,6 +199,11 @@ namespace Aron_For_TwMs_113_4.Components
             // 
             // numLuk
             // 
+            this.numLuk.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numLuk.Location = new System.Drawing.Point(375, 304);
             this.numLuk.Maximum = new decimal(new int[] {
             32767,
@@ -218,6 +223,11 @@ namespace Aron_For_TwMs_113_4.Components
             // 
             // numInt
             // 
+            this.numInt.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numInt.Location = new System.Drawing.Point(289, 304);
             this.numInt.Maximum = new decimal(new int[] {
             32767,
@@ -237,6 +247,11 @@ namespace Aron_For_TwMs_113_4.Components
             // 
             // numDex
             // 
+            this.numDex.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numDex.Location = new System.Drawing.Point(201, 304);
             this.numDex.Maximum = new decimal(new int[] {
             32767,
@@ -256,6 +271,11 @@ namespace Aron_For_TwMs_113_4.Components
             // 
             // numStr
             // 
+            this.numStr.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numStr.Location = new System.Drawing.Point(113, 304);
             this.numStr.Maximum = new decimal(new int[] {
             32767,

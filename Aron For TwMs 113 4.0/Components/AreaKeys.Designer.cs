@@ -30,6 +30,8 @@ namespace Aron_For_TwMs_113_4.Components
         private void InitializeComponent()
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.numMP = new System.Windows.Forms.NumericUpDown();
+            this.numHP = new System.Windows.Forms.NumericUpDown();
             this.CoMP = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CkMP = new System.Windows.Forms.CheckBox();
@@ -57,17 +59,15 @@ namespace Aron_For_TwMs_113_4.Components
             this.label1 = new System.Windows.Forms.Label();
             this.CoKey0 = new System.Windows.Forms.ComboBox();
             this.CkKey0 = new System.Windows.Forms.CheckBox();
-            this.numHP = new System.Windows.Forms.NumericUpDown();
-            this.numMP = new System.Windows.Forms.NumericUpDown();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHP)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMP)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -89,6 +89,66 @@ namespace Aron_For_TwMs_113_4.Components
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "自動恢復";
+            // 
+            // numMP
+            // 
+            this.numMP.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.numMP.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numMP.Location = new System.Drawing.Point(121, 74);
+            this.numMP.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.numMP.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMP.Name = "numMP";
+            this.numMP.Size = new System.Drawing.Size(87, 23);
+            this.numMP.TabIndex = 27;
+            this.numMP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numMP.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numMP.ValueChanged += new System.EventHandler(this.num_HPMP_ValueChanged);
+            // 
+            // numHP
+            // 
+            this.numHP.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.numHP.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numHP.Location = new System.Drawing.Point(121, 33);
+            this.numHP.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.numHP.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numHP.Name = "numHP";
+            this.numHP.Size = new System.Drawing.Size(87, 23);
+            this.numHP.TabIndex = 26;
+            this.numHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numHP.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numHP.ValueChanged += new System.EventHandler(this.num_HPMP_ValueChanged);
             // 
             // CoMP
             // 
@@ -187,6 +247,11 @@ namespace Aron_For_TwMs_113_4.Components
             // num4
             // 
             this.num4.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.num4.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.num4.Location = new System.Drawing.Point(240, 238);
             this.num4.Maximum = new decimal(new int[] {
             10000000,
@@ -203,7 +268,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.num4.TabIndex = 25;
             this.num4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.num4.Value = new decimal(new int[] {
-            10,
+            50,
             0,
             0,
             0});
@@ -212,6 +277,11 @@ namespace Aron_For_TwMs_113_4.Components
             // num3
             // 
             this.num3.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.num3.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.num3.Location = new System.Drawing.Point(240, 185);
             this.num3.Maximum = new decimal(new int[] {
             10000000,
@@ -228,7 +298,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.num3.TabIndex = 24;
             this.num3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.num3.Value = new decimal(new int[] {
-            10,
+            50,
             0,
             0,
             0});
@@ -237,6 +307,11 @@ namespace Aron_For_TwMs_113_4.Components
             // num2
             // 
             this.num2.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.num2.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.num2.Location = new System.Drawing.Point(240, 132);
             this.num2.Maximum = new decimal(new int[] {
             10000000,
@@ -253,7 +328,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.num2.TabIndex = 23;
             this.num2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.num2.Value = new decimal(new int[] {
-            10,
+            50,
             0,
             0,
             0});
@@ -262,6 +337,11 @@ namespace Aron_For_TwMs_113_4.Components
             // num1
             // 
             this.num1.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.num1.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.num1.Location = new System.Drawing.Point(240, 79);
             this.num1.Maximum = new decimal(new int[] {
             10000000,
@@ -278,7 +358,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.num1.TabIndex = 22;
             this.num1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.num1.Value = new decimal(new int[] {
-            10,
+            50,
             0,
             0,
             0});
@@ -287,6 +367,11 @@ namespace Aron_For_TwMs_113_4.Components
             // num0
             // 
             this.num0.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.num0.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.num0.Location = new System.Drawing.Point(240, 28);
             this.num0.Maximum = new decimal(new int[] {
             10000000,
@@ -303,7 +388,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.num0.TabIndex = 21;
             this.num0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.num0.Value = new decimal(new int[] {
-            10,
+            50,
             0,
             0,
             0});
@@ -464,56 +549,6 @@ namespace Aron_For_TwMs_113_4.Components
             this.CkKey0.UseVisualStyleBackColor = true;
             this.CkKey0.CheckedChanged += new System.EventHandler(this.ckAutoKeyboard_Changed);
             // 
-            // numHP
-            // 
-            this.numHP.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.numHP.Location = new System.Drawing.Point(121, 33);
-            this.numHP.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numHP.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numHP.Name = "numHP";
-            this.numHP.Size = new System.Drawing.Size(87, 23);
-            this.numHP.TabIndex = 26;
-            this.numHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numHP.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numHP.ValueChanged += new System.EventHandler(this.num_HPMP_ValueChanged);
-            // 
-            // numMP
-            // 
-            this.numMP.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.numMP.Location = new System.Drawing.Point(121, 74);
-            this.numMP.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numMP.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numMP.Name = "numMP";
-            this.numMP.Size = new System.Drawing.Size(87, 23);
-            this.numMP.TabIndex = 27;
-            this.numMP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numMP.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numMP.ValueChanged += new System.EventHandler(this.num_HPMP_ValueChanged);
-            // 
             // AreaKeys
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -527,6 +562,8 @@ namespace Aron_For_TwMs_113_4.Components
             this.Load += new System.EventHandler(this.AreaKeys_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHP)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num4)).EndInit();
@@ -534,8 +571,6 @@ namespace Aron_For_TwMs_113_4.Components
             ((System.ComponentModel.ISupportInitialize)(this.num2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMP)).EndInit();
             this.ResumeLayout(false);
 
         }

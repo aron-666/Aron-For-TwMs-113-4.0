@@ -39,6 +39,7 @@ namespace Aron_For_TwMs_113_4.Components
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.t_Lock = new System.Windows.Forms.Timer(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.ckDwWnd = new System.Windows.Forms.CheckBox();
             this.ckNotify = new System.Windows.Forms.CheckBox();
             this.ckAutoSave = new System.Windows.Forms.CheckBox();
             this.CkStart = new System.Windows.Forms.CheckBox();
@@ -51,7 +52,6 @@ namespace Aron_For_TwMs_113_4.Components
             this.lbExeFile = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.ckDwWnd = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -139,12 +139,12 @@ namespace Aron_For_TwMs_113_4.Components
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 58);
+            this.comboBox1.Location = new System.Drawing.Point(112, 57);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(239, 22);
+            this.comboBox1.Size = new System.Drawing.Size(239, 27);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             // 
@@ -173,6 +173,19 @@ namespace Aron_For_TwMs_113_4.Components
             this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Options";
+            // 
+            // ckDwWnd
+            // 
+            this.ckDwWnd.AutoSize = true;
+            this.ckDwWnd.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ckDwWnd.Location = new System.Drawing.Point(191, 57);
+            this.ckDwWnd.Margin = new System.Windows.Forms.Padding(4);
+            this.ckDwWnd.Name = "ckDwWnd";
+            this.ckDwWnd.Size = new System.Drawing.Size(66, 21);
+            this.ckDwWnd.TabIndex = 16;
+            this.ckDwWnd.Text = "視窗化";
+            this.ckDwWnd.UseVisualStyleBackColor = true;
+            this.ckDwWnd.CheckedChanged += new System.EventHandler(this.ckDwWnd_CheckedChanged);
             // 
             // ckNotify
             // 
@@ -261,12 +274,12 @@ namespace Aron_For_TwMs_113_4.Components
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(9, 31);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(174, 22);
+            this.comboBox2.Size = new System.Drawing.Size(186, 27);
             this.comboBox2.TabIndex = 10;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -321,19 +334,6 @@ namespace Aron_For_TwMs_113_4.Components
             this.openFileDialog1.FileName = "MapleStory.exe";
             this.openFileDialog1.Filter = "*.exe|*.exe";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // ckDwWnd
-            // 
-            this.ckDwWnd.AutoSize = true;
-            this.ckDwWnd.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ckDwWnd.Location = new System.Drawing.Point(191, 57);
-            this.ckDwWnd.Margin = new System.Windows.Forms.Padding(4);
-            this.ckDwWnd.Name = "ckDwWnd";
-            this.ckDwWnd.Size = new System.Drawing.Size(66, 21);
-            this.ckDwWnd.TabIndex = 16;
-            this.ckDwWnd.Text = "視窗化";
-            this.ckDwWnd.UseVisualStyleBackColor = true;
-            this.ckDwWnd.CheckedChanged += new System.EventHandler(this.ckDwWnd_CheckedChanged);
             // 
             // AreaLock
             // 

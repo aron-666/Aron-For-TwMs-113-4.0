@@ -60,7 +60,7 @@ namespace Aron_For_TwMs_113_4.Components
                 if (i is CheckBox ck)
                 {
 
-                    var autoKeyboard = new MyAutoKeyboard(ptr, i.Name, 10, AutoKeyboard.keyValues[0]);
+                    var autoKeyboard = new MyAutoKeyboard(ptr, i.Name, 50, AutoKeyboard.keyValues[0]);
                     autoKeyboards.Add(autoKeyboard);
                     ck.Tag = autoKeyboard;
                 }
