@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,6 +36,8 @@ namespace Aron_For_TwMs_113_4
         {
             try
             {
+                System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
                 MyWebClient webClient = new MyWebClient();
                 var s = webClient.DownloadString("https://aronhome.in/intro/api/TwMs113AppInfo/GetAsmScriptA");
                 var obj = JsonConvert.DeserializeObject<Models.ApiResualt<string>>(s);
@@ -45,8 +48,9 @@ namespace Aron_For_TwMs_113_4
 
                 ct = ProcessTools.CtTools.CtFactory.Load(s);
             }
-            catch
+            catch(Exception ex)
             {
+
                 MessageBox.Show("無法連線到伺服器，請聯繫作者。", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
                 return;
