@@ -40,11 +40,11 @@ namespace Aron_For_TwMs_113_4.Components
                 {
                     ct["hp_lock"].ScriptObject.WriteOfData = 20;
                     ct["hp_lock"].ScriptObject.IsRead = false;
-                    ct["hp_lock"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["hp_lock"].Address, out _);
+                    ct["hp_lock"].ScriptObject.DoScript(MapleProcess.MemoryControl, out _);
 
                     ct["mp_lock"].ScriptObject.WriteOfData = 20;
                     ct["mp_lock"].ScriptObject.IsRead = false;
-                    ct["mp_lock"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["mp_lock"].Address, out _);
+                    ct["mp_lock"].ScriptObject.DoScript(MapleProcess.MemoryControl, out _);
                     Thread.Sleep(500);
                 }
                 
@@ -62,7 +62,7 @@ namespace Aron_For_TwMs_113_4.Components
                     lock (ct["人物名"].ScriptObject)
                     {
                         ct["人物名"].ScriptObject.IsRead = true;
-                        ct["人物名"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["人物名"].Address, out var name);
+                        ct["人物名"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var name);
                         info.Name = name.ToString();
                         if (CkReName.Checked)
                         {
@@ -71,31 +71,31 @@ namespace Aron_For_TwMs_113_4.Components
                                 ct["人物名"].ScriptObject.IsRead = false;
                                 ct["人物名"].ScriptObject.WriteOfData = TeReName.Text + '\0';
 
-                                ct["人物名"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["人物名"].Address, out _);
+                                ct["人物名"].ScriptObject.DoScript(MapleProcess.MemoryControl, out _);
                             }
                         }
                     }
                     
 
-                    ct["system_time"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["system_time"].Address, out var time);
+                    ct["system_time"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var time);
                     info.SystemTime = (int)time;
 
-                    ct["hp"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["hp"].Address, out var hp);
+                    ct["hp"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var hp);
                     info.HP = (int)hp;
 
-                    ct["mp"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["mp"].Address, out var mp);
+                    ct["mp"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var mp);
                     info.MP = (int)mp;
 
-                    ct["紅點數量"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["紅點數量"].Address, out var redDots);
+                    ct["紅點數量"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var redDots);
                     info.RedDots = (int)redDots;
 
-                    ct["怪物數量"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["怪物數量"].Address, out var mobs);
+                    ct["怪物數量"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var mobs);
                     info.Mobs = (int)mobs;
 
                     lock (ct["攻擊不停"].ScriptObject)
                     {
                         ct["攻擊不停"].ScriptObject.IsRead = true;
-                        ct["攻擊不停"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["攻擊不停"].Address, out var att);
+                        ct["攻擊不停"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var att);
                         info.AttCount = (int)att;
                     }
 
@@ -103,21 +103,21 @@ namespace Aron_For_TwMs_113_4.Components
                     lock (ct["停止呼吸"].ScriptObject)
                     {
                         ct["停止呼吸"].ScriptObject.IsRead = true;
-                        ct["停止呼吸"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["停止呼吸"].Address, out var br);
+                        ct["停止呼吸"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var br);
                         info.Breathe = (int)br;
                     }
                     
 
-                    ct["X"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["X"].Address, out var x);
+                    ct["X"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var x);
                     info.playerX = (int)x;
 
-                    ct["Y"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["Y"].Address, out var y);
+                    ct["Y"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var y);
                     info.playerY = (int)y;
 
-                    ct["滑鼠X"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["滑鼠X"].Address, out var mx);
+                    ct["滑鼠X"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var mx);
                     info.MouseX = (int)mx;
 
-                    ct["滑鼠Y"].ScriptObject.DoScript(MapleProcess.MemoryControl, ct["滑鼠Y"].Address, out var my);
+                    ct["滑鼠Y"].ScriptObject.DoScript(MapleProcess.MemoryControl, out var my);
                     info.MouseY = (int)my;
                     Thread.Sleep(10);
                 }

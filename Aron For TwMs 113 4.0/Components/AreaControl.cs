@@ -82,7 +82,7 @@ namespace Aron_For_TwMs_113_4.Components
                 PointAccesser accesser = sender as PointAccesser;
                 lock (accesser.CtData.ScriptObject)
                 {
-                    accesser.CtData.ScriptObject.DoScript(MapleProcess.MemoryControl, accesser.CtData.Address, out var redDot);
+                    accesser.CtData.ScriptObject.DoScript(MapleProcess.MemoryControl, out var redDot);
                     if((int)redDot >  numRedDots.Value)
                     {
                         MapleProcess.Kill();
@@ -102,7 +102,7 @@ namespace Aron_For_TwMs_113_4.Components
             lock (accesser.CtData.ScriptObject)
             {
                 accesser.CtData.ScriptObject.IsRead = false;
-                accesser.CtData.ScriptObject.DoScript(MapleProcess.MemoryControl, accesser.CtData.Address, out _);
+                accesser.CtData.ScriptObject.DoScript(MapleProcess.MemoryControl, out _);
             }
         }
 
@@ -174,15 +174,48 @@ namespace Aron_For_TwMs_113_4.Components
             var ct = _componentEvents.GetCt();
             if (MapleProcess.IsOpen)
             {
+                //從CT檔內取得數據資料
+                var sc = ct["改能力"];
+                //如果數據不在 CE 裡 新增數據
+                if (!MapleProcess.AsmValues.ContainsKey(sc.Name))
+                {
+                    //把能力值填入數據內
+                    var str = string.Format(sc.AsmScript, decimal.ToInt32(numStr.Value), decimal.ToInt32(numDex.Value), decimal.ToInt32(numInt.Value), decimal.ToInt32(numLuk.Value));
+                    MapleProcess.AddScript(sc.Name, str);
+                }
 
-                var sc = ct["改能力"];//.CeAutoAsm(ck.Checked);
-                var str = string.Format(sc.AsmScript, decimal.ToInt32(numStr.Value), decimal.ToInt32(numDex.Value), decimal.ToInt32(numInt.Value), decimal.ToInt32(numLuk.Value));
-
-                MapleProcess.CeAutoAsm(sc.Name, str, ck.Enabled);
-                //sc.CeAutoAsm(ck.Checked);
+                //開關數據
+                MapleProcess.CeAutoAsm(sc.Name, ck.Enabled);
             }
         }
 
+        /// <summary>
+        /// 改能力的數值方塊發生變化時觸發
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ap_ValueChange(object sender, EventArgs e)
+        {
+            if (!OnOff)
+                return;
+            var ck = Ck改能力;
+            var ct = _componentEvents.GetCt();
+
+            var sc = ct["改能力"];
+
+            if (MapleProcess.IsOpen && MapleProcess.AsmValues.ContainsKey(sc.Name))
+            {
+
+                var str = string.Format(sc.AsmScript, decimal.ToInt32(numStr.Value), decimal.ToInt32(numDex.Value), decimal.ToInt32(numInt.Value), decimal.ToInt32(numLuk.Value));
+                MapleProcess.CeAutoAsm(sc.Name, false);
+                MapleProcess.ResetScript(sc.Name, str);
+
+                if(ck.Checked)
+                    MapleProcess.CeAutoAsm(sc.Name, ck.Checked);
+            }
+        }
+
+        //因伺服器的改版，此數據目前無效
         private void ckHPMP_CheckedChanged(object sender, EventArgs e)
         {
             if (!OnOff)
@@ -192,31 +225,24 @@ namespace Aron_For_TwMs_113_4.Components
             if (MapleProcess.IsOpen)
             {
 
-                var sc = ct["快速恢復HPMP"];//.CeAutoAsm(ck.Checked);
-                var str = string.Format(sc.AsmScript, decimal.ToInt32(numHP.Value), decimal.ToInt32(numMP.Value));
+                //從CT檔內取得數據資料
+                var sc = ct["快速恢復HPMP"];
 
-                MapleProcess.CeAutoAsm(sc.Name, str, ck.Enabled);
-                //sc.CeAutoAsm(ck.Checked);
+                //如果數據不在CE裡，新增數據
+                if (!MapleProcess.AsmValues.ContainsKey(sc.Name))
+                {
+                    //把倍數填入數據內
+                    var str = string.Format(sc.AsmScript, decimal.ToInt32(numHP.Value), decimal.ToInt32(numMP.Value));
+                    MapleProcess.AddScript(sc.Name, str);
+
+                }
+
+                //開關數據
+                MapleProcess.CeAutoAsm(sc.Name, ck.Enabled);
             }
         }
 
-        private void ap_ValueChange(object sender, EventArgs e)
-        {
-            if (!OnOff)
-                return;
-            var ck = Ck改能力;
-            var ct = _componentEvents.GetCt();
-            if (MapleProcess.IsOpen && ck.Checked)
-            {
-
-                var sc = ct["改能力"];//.CeAutoAsm(ck.Checked);
-                var str = string.Format(sc.AsmScript, decimal.ToInt32(numStr.Value), decimal.ToInt32(numDex.Value), decimal.ToInt32(numInt.Value), decimal.ToInt32(numLuk.Value));
-                MapleProcess.CeAutoAsm(sc.Name, str, false);
-                MapleProcess.ResetScript(sc.Name, str);
-                MapleProcess.CeAutoAsm(sc.Name, str, ck.Enabled);
-                //sc.CeAutoAsm(ck.Checked);
-            }
-        }
+        
 
         private void Ck定點_CheckedChanged(object sender, EventArgs e)
         {
@@ -228,33 +254,38 @@ namespace Aron_For_TwMs_113_4.Components
             {
                 string name = Co生怪.Text + "生怪";
 
-                var sc = ct[name];//.CeAutoAsm(ck.Checked);
-                //var str = string.Format(sc.AsmScript, decimal.ToInt32(numHP.Value), decimal.ToInt32(numMP.Value));
+                //從CT檔內取得數據資料
+                var sc = ct[name];
 
-                //MapleProcess.ResetScript("定點生怪", sc.AsmScript);
-                MapleProcess.CeAutoAsm("定點生怪", sc.AsmScript, ck.Checked);
-                //sc.CeAutoAsm(ck.Checked);
+                //如果數據不在CE裡，新增數據
+                if (!MapleProcess.AsmValues.ContainsKey("定點生怪"))
+                {
+                    MapleProcess.AddScript("定點生怪", sc.AsmScript);
+                }
+
+                MapleProcess.CeAutoAsm("定點生怪", ck.Checked);
             }
         }
 
+        //當定點生怪的ComboBox 選擇變化時觸發 這個邏輯有點複雜 懶得解釋自己想
         private void Co生怪_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!OnOff)
                 return;
             var ck = Ck定點;
             var ct = _componentEvents.GetCt();
-            if (MapleProcess.IsOpen && ck.Checked)
+            if (MapleProcess.IsOpen && MapleProcess.AsmValues.ContainsKey("定點生怪"))
             {
                 string name = Co生怪.Text + "生怪";
 
-                var sc = ct[name];//.CeAutoAsm(ck.Checked);
-                //var str = string.Format(sc.AsmScript, decimal.ToInt32(numHP.Value), decimal.ToInt32(numMP.Value));
+                var sc = ct[name];
 
-                //MapleProcess.ResetScript("定點生怪", sc.AsmScript);
-                MapleProcess.CeAutoAsm("定點生怪", "", false);
+                MapleProcess.CeAutoAsm("定點生怪", false);
+
                 MapleProcess.ResetScript("定點生怪", sc.AsmScript);
-                MapleProcess.CeAutoAsm("定點生怪", sc.AsmScript, ck.Checked);
-                //sc.CeAutoAsm(ck.Checked);
+
+                if(ck.Checked)
+                    MapleProcess.CeAutoAsm("定點生怪", ck.Checked);
             }
         }
     }

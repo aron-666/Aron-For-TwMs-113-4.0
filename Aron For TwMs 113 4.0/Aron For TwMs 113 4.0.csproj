@@ -173,12 +173,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Maple113cs\ProcessTools.csproj">
-      <Project>{17128bdf-c9e1-4f6d-9bfa-58870ca5f66d}</Project>
-      <Name>ProcessTools</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="lib\dxwnd.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -186,6 +180,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="pictureBox1.Image.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Maple113csNew\ProcessTools.csproj">
+      <Project>{17128bdf-c9e1-4f6d-9bfa-58870ca5f66d}</Project>
+      <Name>ProcessTools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
