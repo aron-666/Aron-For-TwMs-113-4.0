@@ -103,6 +103,7 @@ namespace Aron_For_TwMs_113_4
         private void btnArea_Click(object sender, EventArgs e)
         {
             
+            //test
             var con = sender as Control;
 
             int index = int.Parse(con.Tag.ToString());
